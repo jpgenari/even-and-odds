@@ -34,22 +34,23 @@ function startGame() {
     gameContainer.classList.remove('hide');
 }
 
+let userResult;
+
 function getUserOption(userOption) {
     console.log('User selection');
-    let userResult;
 
     if (userOption === 'btn-odds') {
         userResult = 1;
-    } else if (userOption === 'btn-evens'); {
+    } else if (userOption === 'btn-evens') {
         userResult = 0;
     }
     console.log(userResult);
 }
 
+let userNumberSelected;
+
 function getUserNumber(userNumber) {
     console.log('User number');
-
-    let userNumberSelected;
 
     if (userNumber === 'btn-1') {
         userNumberSelected = 1;
@@ -59,13 +60,25 @@ function getUserNumber(userNumber) {
         userNumberSelected = 3;
     } else if (userNumber === 'btn-4') {
         userNumberSelected = 4;
-    } else if (userNumber === 'btn-5'); {
+    } else if (userNumber === 'btn-5') {
         userNumberSelected = 5;
     }
     console.log(userNumberSelected);
+    runGame();
 }
 
+let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+
+let finalResult;
 
 function runGame() {
+    let cpuNumber = (Math.floor(Math.random() * images.length) + 1);
+    console.log('CPU Number')
+    console.log(cpuNumber);
+    let finalNumber = cpuNumber % userNumberSelected;
+    if (userResult === finalNumber) {
+        finalResult = 'Winner';
+    } else (finalResult = 'Lose')
+    console.log(finalResult);
     
 }
