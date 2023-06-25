@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
+let userResult;
+let userNumberSelected;
+let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let finalResult;
+let cpuNumber;
 
 /**
  * This function starts the game by switching the screens
@@ -43,8 +48,6 @@ function startGame() {
     instructionsContainer.classList.add('hide');
     gameContainer.classList.remove('hide');
 }
-
-let userResult;
 
 /** 
  * This function gets the user selection between odds and evens
@@ -59,8 +62,6 @@ function getUserOption(userOption) {
     }
     console.log(userResult);
 }
-
-let userNumberSelected;
 
 /**
  * This function get the user input for the game from 1 to 5 and run the game
@@ -85,11 +86,6 @@ function getUserNumber(userNumber) {
     displayImages();
 }
 
-let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
-
-let finalResult;
-let cpuNumber;
-
 function runGame() {
     cpuNumber = (Math.floor(Math.random() * images.length) + 1);
     console.log('CPU Number')
@@ -113,7 +109,7 @@ function displayImages() {
     let imageCpuResult = images[cpuNumber - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
-    imageCpuElement.alt = `Image showing a hand with ${cpuNumber} fingers`;
+    imageUserElement.alt = `Image showing a hand with ${cpuNumber} fingers`;
 }
 
 function showAlert() {
