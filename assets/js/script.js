@@ -98,7 +98,7 @@ function runGame() {
     }
     console.log(finalResult); 
     displayImages();
-    showAlert();
+    showResults();
 }
 
 function displayImages() {
@@ -112,12 +112,12 @@ function displayImages() {
     imageUserElement.alt = `Image showing a hand with ${cpuNumber} fingers`;
 }
 
-function showAlert() {
+function showResults() {
     if (finalResult === 'Winner') {
-        alert('You WON! Keep Playing!')
+        document.getElementById('show-results').innerHTML = 'You won! Keep playing!'
         incrementResults();
     } else {
-        alert('You LOST! Try Again!')
+        document.getElementById('show-results').innerHTML = 'CPU won! Keep playing!'
     }
     incrementPlayed();
 }
