@@ -95,6 +95,7 @@ function runGame() {
     }
     console.log(finalResult); 
     displayImages();
+    showAlert();
 }
 
 function displayImages() {
@@ -104,14 +105,24 @@ function displayImages() {
     let imageCpuResult = images[cpuNumber - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
-    showAlert();
 }
 
 function showAlert() {
     if (finalResult === 'Winner') {
         alert('You WON! Keep Playing!')
+        incrementResults();
     } else {
         alert('You LOST! Try Again!')
     }
+    incrementPlayed();
 }
 
+function incrementResults() {
+    let oldResults = parseInt(document.getElementById('rounds-won').innerText);
+    document.getElementById('rounds-won').innerText = ++oldResults;
+}
+
+function incrementPlayed() {
+    let oldPlayed = parseInt(document.getElementById('rounds-played').innerText);
+    document.getElementById('rounds-played').innerText = ++oldPlayed;
+}
