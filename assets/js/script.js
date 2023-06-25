@@ -75,6 +75,7 @@ function getUserNumber(userNumber) {
     }
     console.log(userNumberSelected);
     runGame();
+    displayImages();
 }
 
 let images = ["/assets/images/1-finger.webp", "/assets/images/2-fingers.webp", "/assets/images/3-fingers.webp", "/assets/images/4-fingers.webp", "/assets/images/5-fingers.webp"];
@@ -89,13 +90,11 @@ function runGame() {
     let finalNumber = cpuNumber % userNumberSelected;
     if (userResult === finalNumber) {
         finalResult = 'Winner';
-        alert('You WON! Keep Playing!')
     } else {
         finalResult = 'Lose'
-        alert('You LOST! Try Again!')
     }
     console.log(finalResult); 
-    
+    displayImages();
 }
 
 function displayImages() {
@@ -105,4 +104,14 @@ function displayImages() {
     let imageCpuResult = images[cpuNumber - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
+    showAlert();
 }
+
+function showAlert() {
+    if (finalResult === 'Winner') {
+        alert('You WON! Keep Playing!')
+    } else {
+        alert('You LOST! Try Again!')
+    }
+}
+
