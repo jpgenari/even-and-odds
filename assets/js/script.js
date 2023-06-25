@@ -85,7 +85,7 @@ function getUserNumber(userNumber) {
     displayImages();
 }
 
-let images = ["/assets/images/1-finger.webp", "/assets/images/2-fingers.webp", "/assets/images/3-fingers.webp", "/assets/images/4-fingers.webp", "/assets/images/5-fingers.webp"];
+let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 
 let finalResult;
 let cpuNumber;
@@ -109,9 +109,11 @@ function displayImages() {
     let imageUserResult = images[userNumberSelected - 1];
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserResult;
+    imageUserElement.alt = `Image showing a hand with ${userNumberSelected} fingers`;
     let imageCpuResult = images[cpuNumber - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
+    imageCpuElement.alt = `Image showing a hand with ${cpuNumber} fingers`;
 }
 
 function showAlert() {
