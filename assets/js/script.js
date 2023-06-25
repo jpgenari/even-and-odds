@@ -40,15 +40,31 @@ function getUserOption(userOption) {
 
     if (userOption === 'btn-odds') {
         userResult = 1;
-    } else (userOption === 'btn-evens'); {
+    } else if (userOption === 'btn-evens'); {
         userResult = 0;
     }
     console.log(userResult);
 }
 
-function getUserNumber() {
+function getUserNumber(userNumber) {
     console.log('User number');
+
+    let userNumberSelected;
+
+    if (userNumber === 'btn-1') {
+        userNumberSelected = 1;
+    } else if (userNumber === 'btn-2') {
+        userNumberSelected = 2;
+    } else if (userNumber === 'btn-3') {
+        userNumberSelected = 3;
+    } else if (userNumber === 'btn-4') {
+        userNumberSelected = 4;
+    } else if (userNumber === 'btn-5'); {
+        userNumberSelected = 5;
+    }
+    console.log(userNumberSelected);
 }
+
 
 function runGame() {
     
