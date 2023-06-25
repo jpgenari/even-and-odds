@@ -30,3 +30,21 @@ body {
 .hide {
     display: none;
 }
+
+#result-images {
+    width: 400px;
+    height: 200px;
+    /* display: flex;
+    column-gap: 7rem; */
+}
+
+#user-image img, #cpu-image img {
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    /* position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+}

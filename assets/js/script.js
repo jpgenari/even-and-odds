@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
 
+/**
+ * This function starts the game by switching the screens
+ */
 function startGame() {
     console.log('Started');
     instructionsContainer.classList.add('hide');
@@ -36,6 +39,9 @@ function startGame() {
 
 let userResult;
 
+/** 
+ * This function gets the user selection between odds and evens
+ */
 function getUserOption(userOption) {
     console.log('User selection');
 
@@ -48,6 +54,10 @@ function getUserOption(userOption) {
 }
 
 let userNumberSelected;
+
+/**
+ * This function get the user input for the game from 1 to 5 and run the game
+ */
 
 function getUserNumber(userNumber) {
     console.log('User number');
@@ -67,9 +77,10 @@ function getUserNumber(userNumber) {
     runGame();
 }
 
-let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let images = ["/assets/images/1-finger.webp", "/assets/images/2-fingers.webp", "/assets/images/3-fingers.webp", "/assets/images/4-fingers.webp", "/assets/images/5-fingers.webp"];
 
 let finalResult;
+
 
 function runGame() {
     let cpuNumber = (Math.floor(Math.random() * images.length) + 1);
@@ -84,4 +95,13 @@ function runGame() {
         alert('You LOST! Try Again!')
     }
     console.log(finalResult); 
+}
+
+function displayImages() {
+    let imageUserResult = images[userNumberSelected];
+    let imageUserElement = document.getElementById('user-image');
+    imageUserElement.src = imageUserResult;
+    let imageCpuResult = images[cpuNumber];
+    let imageCpuElement = document.getElementById('cpu-image');
+    imageCpuElement.src = imageCpuResult;
 }
