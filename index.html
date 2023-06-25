@@ -8,7 +8,11 @@
     <script src="/assets/js/script.js" defer></script>
 </head>
 <body>
+    
+    <!-- This will be the main game container -->
     <div id="main-container">
+        
+        <!-- Game heading containing text and buttons, buttons won't transition -->
         <div id="heading">
             <h1>Let's Play!</h1>
         </div>
@@ -16,6 +20,8 @@
             <button id="option-odds">Odds</button>
             <button id="option-evens">Evens</button>
         </div>
+
+        <!-- Instructions container containing an initial image and instructions to show users how to play, this container will be hidden one game starts -->
         <div id="instructions-container">
             <div id="main-image">Initial main-image <!-- placement holder -->
                 <img src="" alt="">
@@ -28,14 +34,16 @@
                 <p>Click exit at any time to exit the game</p>
             </div>
         </div>
+
+        <!-- Game container will display images showing results and scores -->
         <div id="game-container">
             <div id="result-images">
-                <span id="user-image">User Image</span>
-                <span id="cpu-image">Cpu Image</span>
+                <span id="user-image">User Image</span> <!-- placement holder -->
+                <span id="cpu-image">Cpu Image</span> <!-- placement holder -->
             </div>
             <div id="results-container">
-                <span id="rounds-won"># Wins</span>
-                <span id="rounds-played"># Wins</span>
+                <span id="rounds-won"># Wins</span> <!-- placement holder -->
+                <span id="rounds-played"># Rounds played</span> <!-- placement holder -->
             </div>
         </div>
     </div>
