@@ -1,4 +1,9 @@
-const startButtons = document.getElementById('btn-odds');
+document.addEventListener("DOMContentLoaded", function(){
+
+})
+
+
+const startButtons = document.getElementById('btn-start');
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
 
@@ -9,3 +14,4 @@ function startGame() {
     instructionsContainer.classList.add('hide');
     gameContainer.classList.remove('hide');
 }
+
