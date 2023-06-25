@@ -78,7 +78,10 @@ function runGame() {
     let finalNumber = cpuNumber % userNumberSelected;
     if (userResult === finalNumber) {
         finalResult = 'Winner';
-    } else (finalResult = 'Lose')
-    console.log(finalResult);
-    
+        alert('You WON! Keep Playing!')
+    } else {
+        finalResult = 'Lose'
+        alert('You LOST! Try Again!')
+    }
+    console.log(finalResult); 
 }
