@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odds and Evens</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="/assets/js/script.js" defer></script>
 </head>
 <body>
     
@@ -20,7 +19,7 @@
         <!-- Instructions container containing an initial image and instructions to show users how to play, this container will be hidden one game starts -->
         <div id="instructions-container">
             <div id="start-button">
-                <button id="btn-start" class="btn btn--start">Start</button>
+                <button data-type="btn-start" class="btn btn--start">Start</button>
             </div>
             <div id="main-image">Initial main-image <!-- placement holder -->
                 <img src="" alt="">
@@ -38,8 +37,8 @@
         <!-- Game container will display images showing results and scores -->
         <div id="game-container" class="hide">
             <div id="option-buttons">
-                <button id="btn-odds" class="btn btn--odds">Odds</button>
-                <button id="btn-evens" class="btn btn--evens">Evens</button>
+                <button data-type="btn-odds" class="btn btn--odds">Odds</button>
+                <button data-type="btn-evens" class="btn btn--evens">Evens</button>
             </div>
             <div id="result-images">
                 <span id="user-image">User Image</span> <!-- placement holder -->
@@ -49,8 +48,10 @@
                 <span id="rounds-won"># Wins</span> <!-- placement holder -->
                 <span id="rounds-played"># Rounds played</span> <!-- placement holder -->
             </div>
-            <button id="btn-exit" class="btn btn--exit">Exit</button>
+            <button data-type="btn-exit" class="btn btn--exit">exit</button>
         </div>
     </div>
+
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

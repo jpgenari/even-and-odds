@@ -1,13 +1,23 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = this.getElementsByTagName("button");
 
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "btn-start") {
+                startGame();
+            } else if (this.getAttribute("data-type") === "btn-exit") {
+                location.href = "./index.html";
+                console.log('Exit');
+            } else {
+                let userOption = this.getAttribute("data-type");
+                getUserOption();
+            }
+        })
+    }
 })
 
-
-const startButtons = document.getElementById('btn-start');
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
-
-startButtons.addEventListener('click', startGame);
 
 function startGame() {
     console.log('Started');
@@ -15,3 +25,6 @@ function startGame() {
     gameContainer.classList.remove('hide');
 }
 
+function getUserOption() {
+    console.log('User selection')
+}
