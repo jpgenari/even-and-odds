@@ -80,10 +80,10 @@ function getUserNumber(userNumber) {
 let images = ["/assets/images/1-finger.webp", "/assets/images/2-fingers.webp", "/assets/images/3-fingers.webp", "/assets/images/4-fingers.webp", "/assets/images/5-fingers.webp"];
 
 let finalResult;
-
+let cpuNumber;
 
 function runGame() {
-    let cpuNumber = (Math.floor(Math.random() * images.length) + 1);
+    cpuNumber = (Math.floor(Math.random() * images.length) + 1);
     console.log('CPU Number')
     console.log(cpuNumber);
     let finalNumber = cpuNumber % userNumberSelected;
@@ -95,13 +95,14 @@ function runGame() {
         alert('You LOST! Try Again!')
     }
     console.log(finalResult); 
+    
 }
 
 function displayImages() {
-    let imageUserResult = images[userNumberSelected];
+    let imageUserResult = images[userNumberSelected - 1];
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserResult;
-    let imageCpuResult = images[cpuNumber];
+    let imageCpuResult = images[cpuNumber - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
 }
