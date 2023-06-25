@@ -1,0 +1,28 @@
+/* Global styling */ 
+
+body {
+    background-color: aliceblue;
+    color: gray;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container {
+    background-color: white;
+    box-sizing: border-box;
+    width: 70%;
+    height: auto;
+    max-width: 800px;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
