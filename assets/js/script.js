@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener("click", function () {
+            for (let otherButton of buttons) {
+                if (otherButton !== button) {
+                    otherButton.classList.remove('button-selected');
+                }
+            }
+            
             if (this.getAttribute("data-type") === "btn-start") {
                 startGame();
             } else if (this.getAttribute("data-type") === "btn-exit") {
@@ -21,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let userNumber = this.getAttribute("data-type");
                 getUserNumber(userNumber);
             }
+        button.classList.add('button-selected');
         })
     }
 })
