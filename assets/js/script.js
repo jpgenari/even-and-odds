@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     otherButton.classList.remove('button-selected');
                 }
             }
-            
             if (this.getAttribute("data-type") === "btn-start") {
                 startGame();
             } else if (this.getAttribute("data-type") === "btn-exit") {
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.classList.add('button-selected');
         })
     }
-})
+});
 
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
@@ -61,6 +60,15 @@ function getUserOption(userOption) {
         userResult = 0;
     }
     console.log(userResult);
+    enableNumberButton();
+}
+
+/**
+ * This function enables the number selection buttons, forcing user first pick-up a game option;
+ */
+function enableNumberButton() {
+    let numberButton = document.querySelectorAll('button.number-button');
+    numberButton.forEach(button => button.removeAttribute('disabled'));
 }
 
 /**
