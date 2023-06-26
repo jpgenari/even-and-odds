@@ -53,3 +53,28 @@ body {
 .button-selected {
     background-color: green;
 }
+
+#result-images .user-image img {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes cpuShake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+.user-image img {
+    transform: rotate(90deg);
+}
+
+.cpu-image img {
+    transform: rotate(-90deg) rotateY(180deg);
+}

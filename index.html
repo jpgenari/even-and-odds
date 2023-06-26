@@ -21,8 +21,9 @@
             <div id="start-button">
                 <button data-type="btn-start" class="btn btn--start">Start</button>
             </div>
-            <div id="main-image">Initial main-image <!-- placement holder -->
-                <img src="" alt="">
+            <div id="main-image">
+                <span class="user-image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left"></span>
+                <span class="cpu-image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left"></span>
             </div>
             <div id="instructions">
                 <h3>How to play</h3>
@@ -35,7 +36,7 @@
         </div>
 
         <!-- Game container will display images showing results and scores -->
-        <div id="game-container" class="hide">
+        <div id="game-container" class="start hide">
             <div id="option-buttons">
                 <button data-type="btn-odds" class="btn btn--odds">Odds</button>
                 <button data-type="btn-evens" class="btn btn--evens">Evens</button>
@@ -48,8 +49,8 @@
                 <button data-type="btn-5" class="btn btn--odds number-button" disabled>5</button>
             </div>
             <div id="result-images">
-                <span><img src="assets/images/0-finger-right-2.webp" alt="Closed hand turned to left" id="user-image"></span>
-                <span><img src="assets/images/0-finger-left-2.webp" alt="Closed hand turned to left" id="cpu-image"></span>
+                <span class="user-image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left" id="user-image"></span>
+                <span class="cpu-image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left" id="cpu-image"></span>
             </div>
             <div id="results-container">
                 <p id="show-results"></p>
