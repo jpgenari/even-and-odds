@@ -63,6 +63,9 @@ function getUserOption(userButton) {
     enableNumberButton();
 }
 
+/**
+ * Function to show selected button after user click - not working as expected
+ */
 function selectedButtons() {
     
     button.addEventListener('click', function () {
@@ -72,6 +75,14 @@ function selectedButtons() {
     }
     this.classList.add('button-selected');
 });
+}
+
+/**
+ * Function to prevent user to click on numbers again before animation ends
+ */
+function pauseNumberButton() {
+    let pauseNumberButton = document.querySelectorAll('button.number-button');
+    pauseNumberButton.forEach(button => button.setAttribute('disabled'));
 }
 
 /**
@@ -102,7 +113,7 @@ function getUserNumber(userNumber) {
         userNumberSelected = 5;
     }
     console.log(userNumberSelected);
-
+    
     animationResults();
 }
 
