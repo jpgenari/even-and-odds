@@ -109,6 +109,7 @@ function getUserNumber(userNumber) {
  */
 function animationResults() {
     timeout = setTimeout(runGame, 1500);
+    document.getElementById('show-results').innerHTML = 'Waiting...'
 }
 
 /**
@@ -160,10 +161,10 @@ function displayImages() {
  */
 function showResults() {
     if (finalResult === 'Winner') {
-        document.getElementById('show-results').innerHTML = 'You won! Keep playing!'
+        document.getElementById('show-results').innerHTML = 'You won!'
         incrementResults();
     } else {
-        document.getElementById('show-results').innerHTML = 'CPU won! Keep playing!'
+        document.getElementById('show-results').innerHTML = 'CPU won! Try again!'
     }
     incrementPlayed();
 }
