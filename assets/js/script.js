@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// All external variables
+
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
 let userResult;
@@ -37,6 +39,8 @@ let userNumberSelected;
 let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 let finalResult;
 let cpuNumberSelected;
+let timeout;
+
 
 /**
  * This function starts the game by switching the screens
@@ -49,6 +53,7 @@ function startGame() {
 
 /** 
  * This function gets the user selection between odds and evens
+ * It triggers enableNumberButton function
  */
 function getUserOption(userOption) {
     console.log('User selection');
@@ -77,6 +82,7 @@ function enableNumberButton() {
 
 /**
  * This function get the user input for the game from 1 to 5 and run the game
+ * It triggers animationResults function
  */
 
 function getUserNumber(userNumber) {
@@ -94,9 +100,21 @@ function getUserNumber(userNumber) {
         userNumberSelected = 5;
     }
     console.log(userNumberSelected);
-    runGame();
+    animationResults();
 }
 
+/**
+ * Function to delay results to run animation
+ * It triggers runGame function
+ */
+function animationResults() {
+    timeout = setTimeout(runGame, 1500);
+}
+
+/**
+ * Function to generate random number for the cpu and calculate calculate if cpu + user numbers summed are even (0) of odd (1) using module operation
+ * It triggers checkWinner functions
+ */
 function runGame() {
     cpuNumberSelected = (Math.floor(Math.random() * images.length) + 1);
     console.log('CPU Number')
@@ -104,9 +122,12 @@ function runGame() {
 
     let finalNumber = (cpuNumberSelected + userNumberSelected) % 2
 
-    displayImages();
     checkWinner();
     
+/**
+ * Function to check if winner is user or cpu by comparing user selected option vs final number
+ * It triggers displayImages and showResults
+ */
 function checkWinner() {
 
     if (userResult === finalNumber) {
@@ -119,6 +140,9 @@ function checkWinner() {
     showResults();
 }
 
+/**
+ * Function to display images and their alt info on the DOM
+ */
 function displayImages() {
     let imageUserResult = images[userNumberSelected - 1];
     let imageUserElement = document.getElementById('user-image');
@@ -130,6 +154,10 @@ function displayImages() {
     imageUserElement.alt = `Image showing a hand with ${cpuNumberSelected} fingers`;
 }
 
+/**
+ * Function used to display who's the winner in the round
+ * It triggers incrementResults and incrementPlayed functions
+ */
 function showResults() {
     if (finalResult === 'Winner') {
         document.getElementById('show-results').innerHTML = 'You won! Keep playing!'
@@ -140,11 +168,17 @@ function showResults() {
     incrementPlayed();
 }
 
+/**
+ * Function to increment the number of wins for the user
+ */
 function incrementResults() {
     let oldResults = parseInt(document.getElementById('rounds-won').innerText);
     document.getElementById('rounds-won').innerText = ++oldResults;
 }
 
+/**
+ * Function to increment the number of rounds played
+ */
 function incrementPlayed() {
     let oldPlayed = parseInt(document.getElementById('rounds-played').innerText);
     document.getElementById('rounds-played').innerText = ++oldPlayed;
