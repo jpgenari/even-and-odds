@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 location.href = "./index.html";
                 console.log('Exit');
             } else if (this.getAttribute("data-type") === "btn-odds" || this.getAttribute("data-type") === "btn-evens") {
-                let userOption = this.getAttribute("data-type");
-                getUserOption(userOption);
+                let userButton = this.getAttribute("data-type");
+                getUserOption(userButton);
             } else {
                 let userNumber = this.getAttribute("data-type");
                 getUserNumber(userNumber);
@@ -55,15 +55,15 @@ function startGame() {
  * This function gets the user selection between odds and evens
  * It triggers enableNumberButton function
  */
-function getUserOption(userOption) {
+function getUserOption(userButton) {
     console.log('User selection');
 
-    if (userOption === 'btn-odds') {
-        userResult = 1;
-    } else if (userOption === 'btn-evens') {
-        userResult = 0;
+    if (userButton === 'btn-odds') {
+        userOption = 1;
+    } else if (userButton === 'btn-evens') {
+        userOption = 0;
     }
-    console.log(userResult);
+    console.log(userOption);
     enableNumberButton();
 }
 
@@ -130,7 +130,7 @@ function runGame() {
  */
 function checkWinner() {
 
-    if (userResult === finalNumber) {
+    if (userOption === finalNumber) {
         finalResult = 'Winner';
     } else {
         finalResult = 'Lose'
@@ -144,9 +144,9 @@ function checkWinner() {
  * Function to display images and their alt info on the DOM
  */
 function displayImages() {
-    let imageUserResult = images[userNumberSelected - 1];
+    let imageUserOption = images[userNumberSelected - 1];
     let imageUserElement = document.getElementById('user-image');
-    imageUserElement.src = imageUserResult;
+    imageUserElement.src = imageUserOption;
     imageUserElement.alt = `Image showing a hand with ${userNumberSelected} fingers`;
     let imageCpuResult = images[cpuNumberSelected - 1];
     let imageCpuElement = document.getElementById('cpu-image');
