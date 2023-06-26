@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 let userNumber = this.getAttribute("data-type");
                 getUserNumber(userNumber);
             }
-        button.classList.add('button-selected');
         })
     }
 });
@@ -37,7 +36,7 @@ let userResult;
 let userNumberSelected;
 let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 let finalResult;
-let cpuNumber;
+let cpuNumberSelected;
 
 /**
  * This function starts the game by switching the screens
@@ -61,6 +60,11 @@ function getUserOption(userOption) {
     }
     console.log(userResult);
     enableNumberButton();
+}
+
+function activeButtons() {
+    let activeButton = document.querySelectorAll('button.btn');
+    activeButton.forEach(button => button.classList.add('button-selected'));
 }
 
 /**
@@ -91,19 +95,25 @@ function getUserNumber(userNumber) {
     }
     console.log(userNumberSelected);
     runGame();
-    displayImages();
 }
 
 function runGame() {
-    cpuNumber = (Math.floor(Math.random() * images.length) + 1);
+    cpuNumberSelected = (Math.floor(Math.random() * images.length) + 1);
     console.log('CPU Number')
-    console.log(cpuNumber);
-    let finalNumber = cpuNumber % userNumberSelected;
+    console.log(cpuNumberSelected);
+
+    let finalNumber = (cpuNumberSelected + userNumberSelected) % 2
+
+    displayImages();
+    checkWinner();
+    
+function checkWinner() {
+
     if (userResult === finalNumber) {
         finalResult = 'Winner';
     } else {
         finalResult = 'Lose'
-    }
+    }}
     console.log(finalResult); 
     displayImages();
     showResults();
@@ -114,10 +124,10 @@ function displayImages() {
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserResult;
     imageUserElement.alt = `Image showing a hand with ${userNumberSelected} fingers`;
-    let imageCpuResult = images[cpuNumber - 1];
+    let imageCpuResult = images[cpuNumberSelected - 1];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
-    imageUserElement.alt = `Image showing a hand with ${cpuNumber} fingers`;
+    imageUserElement.alt = `Image showing a hand with ${cpuNumberSelected} fingers`;
 }
 
 function showResults() {
