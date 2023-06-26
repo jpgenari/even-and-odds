@@ -9,11 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            for (let otherButton of buttons) {
-                if (otherButton !== button) {
-                    otherButton.classList.remove('button-selected');
-                }
-            }
             if (this.getAttribute("data-type") === "btn-start") {
                 startGame();
             } else if (this.getAttribute("data-type") === "btn-exit") {
@@ -27,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 getUserNumber(userNumber);
             }
         })
+        // activeButtons();
     }
 });
 
@@ -68,8 +64,14 @@ function getUserOption(userButton) {
 }
 
 function activeButtons() {
-    let activeButton = document.querySelectorAll('button.btn');
-    activeButton.forEach(button => button.classList.add('button-selected'));
+    
+    button.addEventListener('click', function () {
+    // selectedButton = document.getElementsByTagName('button');
+    for (let selectedButton of buttons) {
+        selectedButton.classList.remove('button-selected');
+    }
+    this.classList.add('button-selected');
+});
 }
 
 /**
@@ -100,6 +102,7 @@ function getUserNumber(userNumber) {
         userNumberSelected = 5;
     }
     console.log(userNumberSelected);
+
     animationResults();
 }
 
