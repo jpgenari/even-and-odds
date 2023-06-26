@@ -63,7 +63,7 @@ function getUserOption(userButton) {
     enableNumberButton();
 }
 
-function activeButtons() {
+function selectedButtons() {
     
     button.addEventListener('click', function () {
     // selectedButton = document.getElementsByTagName('button');
