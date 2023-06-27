@@ -49,10 +49,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; */
-    column-gap: 10rem;
+    /* column-gap: 10rem; */
 }
 
-.button-selected {
+.active {
     background-color: green;
 }
 
@@ -90,7 +90,7 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 605px) {
+@media screen and (max-width: 385px) {
     .user-image img {
         transform: rotate(180deg);
     }

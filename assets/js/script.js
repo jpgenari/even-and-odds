@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 getUserNumber(userNumber);
             }
         })
-        // activeButtons();
     }
 });
 
@@ -60,20 +59,59 @@ function getUserOption(userButton) {
         userOption = 0;
     }
     console.log(userOption);
+    activeOptionButton();
     enableNumberButton();
 }
 
 /**
- * Function to show selected button after user click - not working as expected
+ * Function to show selected Option button after user click
  */
-function selectedButtons() {
+function activeOptionButton() {
+    let prevOptionButton = null;
     
-    button.addEventListener('click', function () {
-    // selectedButton = document.getElementsByTagName('button');
-    for (let selectedButton of buttons) {
-        selectedButton.classList.remove('button-selected');
-    }
-    this.classList.add('button-selected');
+    const selectedOptionButton = document.getElementById('option-buttons');
+    
+    selectedOptionButton.addEventListener('click', function (e) {
+        
+        let isOptionButton = e.target.nodeName === 'BUTTON';
+
+        if (!isOptionButton) {
+            return;
+        }
+
+        e.target.classList.add('active');
+
+        if (prevOptionButton !== null) {
+            prevOptionButton.classList.remove('active');
+        }
+
+        prevOptionButton = e.target;
+});
+}
+
+/**
+ * Function to show selected Option button after user click
+ */
+function activeNumberButton() {
+    let prevNumberButton = null;
+
+    const selectedNumberButton = document.getElementById('numbers-buttons');
+    
+    selectedNumberButton.addEventListener('click', function (e) {
+        
+        let isNumberButton = e.target.nodeName === 'BUTTON';
+
+        if (!isNumberButton) {
+            return;
+        }
+
+        e.target.classList.add('active');
+
+        if (prevNumberButton !== null) {
+            prevNumberButton.classList.remove('active');
+        }
+
+        prevNumberButton = e.target;
 });
 }
 
@@ -114,6 +152,7 @@ function getUserNumber(userNumber) {
     }
     console.log(userNumberSelected);
     
+    activeNumberButton();
     animation();
 }
 
