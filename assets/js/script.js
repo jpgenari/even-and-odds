@@ -59,6 +59,7 @@ function getUserOption(userButton) {
         userOption = 0;
     }
     console.log(userOption);
+
     activeOptionButton();
     enableNumberButton();
 }
@@ -151,6 +152,7 @@ function getUserNumber(userNumber) {
  * Function to run animation:
  * It reverts images back to initial images with closed hands for replay
  * It shows the message 'waiting' to the user
+ * It adds the class 'start' to the images to start CSS animation
  * It triggers runGame function with a time out
  */
 function animation() {
@@ -164,9 +166,11 @@ function animation() {
     revertImageCpuElement.src = revertImageCpu;
     revertImageCpuElement.alt = 'Image showing a closed hand';
 
+    gameContainer.classList.add('start');
+
     document.getElementById('show-results').innerHTML = 'Waiting...'
     
-    timeout = setTimeout(runGame, 1500);
+    timeout = setTimeout(runGame, 1500,);
 }
 
 /**
@@ -184,6 +188,7 @@ function runGame() {
     
 /**
  * Function to check if winner is user or cpu by comparing user selected option vs final number
+ * It removes the class 'start' to the images to stop CSS animation
  * It triggers displayImages and showResults
  */
 function checkWinner() {
@@ -194,6 +199,9 @@ function checkWinner() {
         finalResult = 'Lose'
     }}
     console.log(finalResult); 
+
+    gameContainer.classList.remove('start');
+
     displayImages();
     showResults();
 }
