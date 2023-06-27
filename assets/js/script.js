@@ -72,19 +72,14 @@ function activeOptionButton() {
     const selectedOptionButton = document.getElementById('option-buttons');
     
     selectedOptionButton.addEventListener('click', function (e) {
-        
         let isOptionButton = e.target.nodeName === 'BUTTON';
-
         if (!isOptionButton) {
             return;
         }
-
         e.target.classList.add('active');
-
         if (prevOptionButton !== null) {
             prevOptionButton.classList.remove('active');
         }
-
         prevOptionButton = e.target;
 });
 }
@@ -97,20 +92,15 @@ function activeNumberButton() {
 
     const selectedNumberButton = document.getElementById('numbers-buttons');
     
-    selectedNumberButton.addEventListener('click', function (e) {
-        
+    selectedNumberButton.addEventListener('click', function (e) {  
         let isNumberButton = e.target.nodeName === 'BUTTON';
-
         if (!isNumberButton) {
             return;
         }
-
         e.target.classList.add('active');
-
         if (prevNumberButton !== null) {
             prevNumberButton.classList.remove('active');
         }
-
         prevNumberButton = e.target;
 });
 }
@@ -119,8 +109,8 @@ function activeNumberButton() {
  * Function to prevent user to click on numbers again before animation ends - not working
  */
 function pauseNumberButton() {
-    let pauseNumberButton = document.querySelectorAll('button.number-button');
-    pauseNumberButton.forEach(button => button.setAttribute('disabled'));
+    let numberButton = document.querySelectorAll('button.number-button');
+    numberButton.forEach(button => button.classList.add('disable'));
 }
 
 /**
@@ -128,7 +118,7 @@ function pauseNumberButton() {
  */
 function enableNumberButton() {
     let numberButton = document.querySelectorAll('button.number-button');
-    numberButton.forEach(button => button.removeAttribute('disabled'));
+    numberButton.forEach(button => button.classList.remove('disable'));
 }
 
 /**
@@ -152,6 +142,7 @@ function getUserNumber(userNumber) {
     }
     console.log(userNumberSelected);
     
+    pauseNumberButton();
     activeNumberButton();
     animation();
 }
@@ -188,7 +179,7 @@ function runGame() {
     console.log(cpuNumberSelected);
 
     let finalNumber = (cpuNumberSelected + userNumberSelected) % 2
-
+    enableNumberButton();
     checkWinner();
     
 /**

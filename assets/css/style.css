@@ -56,6 +56,10 @@ body {
     background-color: green;
 }
 
+.disable {
+    pointer-events: none;
+}
+
 #game-container.start + #result-images .user_image { /* selector not working, animation not working */
     transform-origin: left; !important
     animation: userShake 0.8s ease infinite; !important
