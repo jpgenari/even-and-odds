@@ -212,11 +212,11 @@ function checkWinner() {
  * Function to display images and their alt info on the DOM
  */
 function displayImages() {
-    let imageUserOption = images.userNumberSelected;
+    let imageUserOption = images[userNumberSelected];
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserOption;
     imageUserElement.alt = `Image showing a hand with ${userNumberSelected} finger(s)`;
-    let imageCpuResult = images.cpuNumberSelected;
+    let imageCpuResult = images[cpuNumberSelected];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
     imageUserElement.alt = `Image showing a hand with ${cpuNumberSelected} finger(s)`;
