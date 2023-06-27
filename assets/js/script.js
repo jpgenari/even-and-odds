@@ -114,16 +114,29 @@ function getUserNumber(userNumber) {
     }
     console.log(userNumberSelected);
     
-    animationResults();
+    animation();
 }
 
 /**
- * Function to delay results to run animation
- * It triggers runGame function
+ * Function to run animation:
+ * It reverts images back to initial images with closed hands for replay
+ * It shows the message 'waiting' to the user
+ * It triggers runGame function with a time out
  */
-function animationResults() {
-    timeout = setTimeout(runGame, 1500);
+function animation() {
+    
+    let revertImageUser = 'assets/images/0-finger.webp';
+    let revertImageUserElement = document.getElementById('user-image');
+    revertImageUserElement.src = revertImageUser;
+    revertImageUserElement.alt = 'Image showing a closed hand';
+    let revertImageCpu = 'assets/images/0-finger.webp';
+    let revertImageCpuElement = document.getElementById('cpu-image');
+    revertImageCpuElement.src = revertImageCpu;
+    revertImageCpuElement.alt = 'Image showing a closed hand';;
+
     document.getElementById('show-results').innerHTML = 'Waiting...'
+    
+    timeout = setTimeout(runGame, 1500);
 }
 
 /**
