@@ -227,11 +227,13 @@ function displayImages() {
  * It triggers incrementResults and incrementPlayed functions
  */
 function showResults() {
+    let totalSum = userNumberSelected + cpuNumberSelected
+    
     if (finalResult === 'Winner') {
-        document.getElementById('show-results').innerHTML = 'You won!'
+        document.getElementById('show-results').innerHTML = `Sum up is ${totalSum}, YOU WON!`;
         incrementResults();
     } else {
-        document.getElementById('show-results').innerHTML = 'CPU won! Try again!'
+        document.getElementById('show-results').innerHTML = `Sum up is ${totalSum}, CPU WON! Try again!`;
     }
     incrementPlayed();
 }
