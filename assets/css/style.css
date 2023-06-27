@@ -34,8 +34,7 @@ body {
 #main-image, #result-images {
     /* width: 400px;
     height: 200px; */
-    /* display: flex; */
-    /* align-items: center; */
+    align-items: center;
     display: flex;
     /* column-gap: 7rem; */
 }
@@ -50,6 +49,11 @@ body {
     background-size: cover;
     background-position: center; */
     /* column-gap: 10rem; */
+}
+
+#number-results {
+    align: center;
+    display: flex;
 }
 
 .active {

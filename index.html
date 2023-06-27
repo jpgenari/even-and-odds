@@ -27,11 +27,12 @@
             </div>
             <div id="instructions">
                 <h3>How to play</h3>
-                <p>Click Start to start the game</p>
-                <p>Select either Odds or Evens</p>
-                <p>After you pick your option the game starts</p>
-                <p>Each image will represent yours and Cpu's hand</p>
-                <p>Click exit at any time to exit the game</p>
+                <p>Press Start</p>
+                <p>Pick your option: Odds or Evens</p>
+                <p>Then pick the number you want to play with</p>
+                <p>Left image represents your number, right image represents Cpu's</p>
+                <p>If your number + Cpu's matches your option, you WIN!</p>
+                <p>Press exit at any time to leave the game</p>
             </div>
         </div>
 
@@ -39,9 +40,11 @@
         <div id="game-container" class="hide">
             <div id="option-buttons">
                 <button data-type="btn-odds" class="btn btn--odds">Odds</button>
+                <span>or</span>
                 <button data-type="btn-evens" class="btn btn--evens">Evens</button>
             </div>
             <div id="numbers-buttons">
+                <p>Pick your number!</p>
                 <button data-type="btn-0" class="btn btn--odds number-button disable">0</button>
                 <button data-type="btn-1" class="btn btn--odds number-button disable">1</button>
                 <button data-type="btn-2" class="btn btn--odds number-button disable">2</button>
@@ -55,10 +58,12 @@
             </div>
             <div id="results-container">
                 <p id="show-results"></p>
-                <p><span id="rounds-won">0</span> Wins</p>
-                <p><span id="rounds-played">0</span> Rounds</p>
+                <div id="number-results">
+                    <p><span id="rounds-won">0</span> Wins</p>
+                    <p><span id="rounds-played">0</span> Rounds</p>
+                </div>
             </div>
-            <button data-type="btn-exit" class="btn btn--exit">exit</button>
+            <button data-type="btn-exit" class="btn btn--exit">Exit the Game</button>
         </div>
     </div>
 

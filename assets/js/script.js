@@ -32,6 +32,7 @@ const gameContainer = document.getElementById('game-container');
 let userResult;
 let userNumberSelected;
 let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let finalNumber;
 let finalResult;
 let cpuNumberSelected;
 let timeout;
@@ -184,7 +185,7 @@ function runGame() {
     console.log('CPU Number')
     console.log(cpuNumberSelected);
 
-    let finalNumber = (cpuNumberSelected + userNumberSelected) % 2
+    finalNumber = (cpuNumberSelected + userNumberSelected) % 2
     enableNumberButton();
     checkWinner();
     
@@ -228,12 +229,19 @@ function displayImages() {
  */
 function showResults() {
     let totalSum = userNumberSelected + cpuNumberSelected
+    let oddsOrEvens;
     
+    if (finalNumber === 0) {
+        oddsOrEvens = "even"
+    } else {
+        oddsOrEvens = "odd"
+    }
+
     if (finalResult === 'Winner') {
-        document.getElementById('show-results').innerHTML = `Sum up is ${totalSum}, YOU WON!`;
+        document.getElementById('show-results').innerHTML = `${totalSum} is ${oddsOrEvens}, YOU WON!`;
         incrementResults();
     } else {
-        document.getElementById('show-results').innerHTML = `Sum up is ${totalSum}, CPU WON! Try again!`;
+        document.getElementById('show-results').innerHTML = `${totalSum} is ${oddsOrEvens}, CPU WON! Try again!`;
     }
     incrementPlayed();
 }
