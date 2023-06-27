@@ -62,7 +62,7 @@ body {
 
 #game-container.start .user_image { 
     transform-origin: left !important;
-    animation: userShake 0.7s ease infinite; !important
+    animation: userShake 0.7s ease infinite;
 }
 
 @keyframes userShake {

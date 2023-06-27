@@ -31,7 +31,7 @@ const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
 let userResult;
 let userNumberSelected;
-let images = ["assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 let finalResult;
 let cpuNumberSelected;
 let timeout;
@@ -130,7 +130,9 @@ function enableNumberButton() {
 function getUserNumber(userNumber) {
     console.log('User number');
 
-    if (userNumber === 'btn-1') {
+    if (userNumber === 'btn-0') {
+        userNumberSelected = 0;
+    } else if (userNumber === 'btn-1') {
         userNumberSelected = 1;
     } else if (userNumber === 'btn-2') {
         userNumberSelected = 2;
@@ -178,7 +180,7 @@ function animation() {
  * It triggers checkWinner functions
  */
 function runGame() {
-    cpuNumberSelected = (Math.floor(Math.random() * images.length) + 1);
+    cpuNumberSelected = (Math.floor(Math.random() * (images.length + 1)));
     console.log('CPU Number')
     console.log(cpuNumberSelected);
 
@@ -210,14 +212,14 @@ function checkWinner() {
  * Function to display images and their alt info on the DOM
  */
 function displayImages() {
-    let imageUserOption = images[userNumberSelected - 1];
+    let imageUserOption = images.userNumberSelected;
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserOption;
-    imageUserElement.alt = `Image showing a hand with ${userNumberSelected} fingers`;
-    let imageCpuResult = images[cpuNumberSelected - 1];
+    imageUserElement.alt = `Image showing a hand with ${userNumberSelected} finger(s)`;
+    let imageCpuResult = images.cpuNumberSelected;
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
-    imageUserElement.alt = `Image showing a hand with ${cpuNumberSelected} fingers`;
+    imageUserElement.alt = `Image showing a hand with ${cpuNumberSelected} finger(s)`;
 }
 
 /**
