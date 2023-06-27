@@ -40,7 +40,7 @@ body {
     /* column-gap: 7rem; */
 }
 
-.user-image img, .cpu-image img {
+.user-image, .cpu-image {
     /* width: 200px; */
     /* max-width: 100%; */
     /* height: 200px; */
@@ -49,15 +49,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; */
+    column-gap: 10rem;
 }
 
 .button-selected {
     background-color: green;
 }
 
-#game_container.start + #result-images .user_image {
-    transform-origin: left;
-    animation: userShake 0.8s ease infinite;
+#game-container.start + #result-images .user_image { /* selector not working, animation not working */
+    transform-origin: left; !important
+    animation: userShake 0.8s ease infinite; !important
 }
 
 @keyframes userShake {
@@ -66,7 +67,7 @@ body {
     }
 }
 
-#game_container.start + #result-images .cpu_image {
+#game-container .start .cpu_image { /* selector not working, animation not working */
     transform-origin: right;
     animation: cpuShake 0.8s ease infinite;
 }

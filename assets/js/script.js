@@ -78,7 +78,7 @@ function selectedButtons() {
 }
 
 /**
- * Function to prevent user to click on numbers again before animation ends
+ * Function to prevent user to click on numbers again before animation ends - not working
  */
 function pauseNumberButton() {
     let pauseNumberButton = document.querySelectorAll('button.number-button');
@@ -86,7 +86,7 @@ function pauseNumberButton() {
 }
 
 /**
- * This function enables the number selection buttons, forcing user first pick-up a game option;
+ * This function enables the number selection buttons, forcing user first pick-up a game option
  */
 function enableNumberButton() {
     let numberButton = document.querySelectorAll('button.number-button');
@@ -132,7 +132,7 @@ function animation() {
     let revertImageCpu = 'assets/images/0-finger.webp';
     let revertImageCpuElement = document.getElementById('cpu-image');
     revertImageCpuElement.src = revertImageCpu;
-    revertImageCpuElement.alt = 'Image showing a closed hand';;
+    revertImageCpuElement.alt = 'Image showing a closed hand';
 
     document.getElementById('show-results').innerHTML = 'Waiting...'
     
