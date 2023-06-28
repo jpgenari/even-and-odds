@@ -1,10 +1,20 @@
+const instructionsContainer = document.getElementById('instructions-container');
+const gameContainer = document.getElementById('game-container');
+let userResult;
+let userNumberSelected;
+let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let finalNumber;
+let finalResult;
+let cpuNumberSelected;
+let timeout;
+
 /**
- * Wait for the DOM to finish loading before loading running the game
+ * Wait for the DOM to finish loading before loading game functions
  * Get the button elements and add event listeners to them
  * Reference from Love Maths project
  */
-
 document.addEventListener("DOMContentLoaded", function() {
+    
     let buttons = this.getElementsByTagName("button");
 
     for (let button of buttons) {
@@ -13,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 startGame();
             } else if (this.getAttribute("data-type") === "btn-exit") {
                 location.href = "./index.html";
+                
                 console.log('Exit');
+
             } else if (this.getAttribute("data-type") === "btn-odds" || this.getAttribute("data-type") === "btn-evens") {
                 let userButton = this.getAttribute("data-type");
                 getUserOption(userButton);
@@ -25,24 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// All external variables
-
-const instructionsContainer = document.getElementById('instructions-container');
-const gameContainer = document.getElementById('game-container');
-let userResult;
-let userNumberSelected;
-let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
-let finalNumber;
-let finalResult;
-let cpuNumberSelected;
-let timeout;
-
-
 /**
  * This function starts the game by switching the screens
  */
 function startGame() {
+
     console.log('Started');
+    
     instructionsContainer.classList.add('hide');
     gameContainer.classList.remove('hide');
 }
@@ -52,6 +53,7 @@ function startGame() {
  * It triggers enableNumberButton function
  */
 function getUserOption(userButton) {
+    
     console.log('User selection');
 
     if (userButton === 'btn-odds') {
@@ -69,6 +71,7 @@ function getUserOption(userButton) {
  * Function to show selected Option button after user click
  */
 function activeOptionButton() {
+    
     let prevOptionButton = null;
     
     const selectedOptionButton = document.getElementById('option-buttons');
@@ -111,6 +114,7 @@ function activeNumberButton() {
  * Function to prevent user to click on numbers again before animation ends - not working
  */
 function pauseNumberButton() {
+    
     let numberButton = document.querySelectorAll('button.btn_number');
     numberButton.forEach(button => button.classList.add('disable'));
 }
@@ -119,6 +123,7 @@ function pauseNumberButton() {
  * This function enables the number selection buttons, forcing user first pick-up a game option
  */
 function enableNumberButton() {
+    
     let numberButton = document.querySelectorAll('button.btn_number');
     numberButton.forEach(button => button.classList.remove('disable'));
 }
@@ -129,6 +134,7 @@ function enableNumberButton() {
  */
 
 function getUserNumber(userNumber) {
+    
     console.log('User number');
 
     if (userNumber === 'btn-0') {
@@ -144,6 +150,7 @@ function getUserNumber(userNumber) {
     } else if (userNumber === 'btn-5') {
         userNumberSelected = 5;
     }
+
     console.log(userNumberSelected);
     
     pauseNumberButton();
@@ -153,10 +160,10 @@ function getUserNumber(userNumber) {
 
 /**
  * Function to run animation:
- * It reverts images back to initial images with closed hands for replay
- * It shows the message 'waiting' to the user
- * It adds the class 'start' to the images to start CSS animation
- * It triggers runGame function with a time out
+ * Reverts images back to initial images with closed hands for replay
+ * Shows the message 'waiting' to the user
+ * Adds the class 'start' to the images to start CSS animation
+ * Triggers runGame function with a time out
  */
 function animation() {
     
@@ -164,6 +171,7 @@ function animation() {
     let revertImageUserElement = document.getElementById('user-image');
     revertImageUserElement.src = revertImageUser;
     revertImageUserElement.alt = 'Image showing a closed hand';
+    
     let revertImageCpu = 'assets/images/0-finger.webp';
     let revertImageCpuElement = document.getElementById('cpu-image');
     revertImageCpuElement.src = revertImageCpu;
@@ -181,14 +189,19 @@ function animation() {
  * It triggers checkWinner functions
  */
 function runGame() {
+    
     cpuNumberSelected = (Math.floor(Math.random() * images.length));
+    
     console.log('CPU Number')
+    
     console.log(cpuNumberSelected);
 
     finalNumber = (cpuNumberSelected + userNumberSelected) % 2
+    
     enableNumberButton();
     checkWinner();
 }
+
 /**
  * Function to check if winner is user or cpu by comparing user selected option vs final number
  * It removes the class 'start' to the images to stop CSS animation
@@ -201,6 +214,7 @@ function checkWinner() {
     } else {
         finalResult = 'Lose'
     }
+    
     console.log(finalResult); 
 
     gameContainer.classList.remove('start');
@@ -213,10 +227,12 @@ function checkWinner() {
  * Function to display images and their alt info on the DOM
  */
 function displayImages() {
+    
     let imageUserOption = images[userNumberSelected];
     let imageUserElement = document.getElementById('user-image');
     imageUserElement.src = imageUserOption;
     imageUserElement.alt = `Image showing a hand with ${userNumberSelected} finger(s)`;
+    
     let imageCpuResult = images[cpuNumberSelected];
     let imageCpuElement = document.getElementById('cpu-image');
     imageCpuElement.src = imageCpuResult;
@@ -228,6 +244,7 @@ function displayImages() {
  * It triggers incrementResults and incrementPlayed functions
  */
 function showResults() {
+    
     let totalSum = userNumberSelected + cpuNumberSelected
     let oddsOrEvens;
     
@@ -250,6 +267,7 @@ function showResults() {
  * Function to increment the number of wins for the user
  */
 function incrementResults() {
+    
     let oldResults = parseInt(document.getElementById('rounds-won').innerText);
     document.getElementById('rounds-won').innerText = ++oldResults;
 }
@@ -258,6 +276,7 @@ function incrementResults() {
  * Function to increment the number of rounds played
  */
 function incrementPlayed() {
+    
     let oldPlayed = parseInt(document.getElementById('rounds-played').innerText);
     document.getElementById('rounds-played').innerText = ++oldPlayed;
 }
