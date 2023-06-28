@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odds and Evens</title>
+    <meta name="description" content="Evens and Odds is a web game built with Javascript that allows user to play evens and odds versus the Cpu for a quick stress relief">
+    <meta name="keywords" content="evens and odds, game, on-line game, quick-play, made with javascript">
+    
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Odds and Evens</title>
+
 </head>
 <body>
     
-    <!-- This will be the main game container -->
+    <!-- header section -->
+
     <header id="header">
         <a href="index.html">
             <h1>Odds and Evens </h1>
@@ -16,14 +22,18 @@
         </a>
     </header>
     
+    <!-- main game container -->
+
     <div id="main-container">
         
-        <!-- Game heading containing text and buttons, buttons won't transition -->
+        <!-- game heading -->
+
         <div id="heading">
-            <h2 id="heading-text">Let's Play</h2>
+            <h2 id="heading-text">Let's Play!</h2>
         </div>
 
-        <!-- Instructions container containing an initial image and instructions to show users how to play, this container will be hidden one game starts -->
+        <!-- instructions container section - hidden when game starts -->
+
         <div id="instructions-container">
             <div id="start-button">
                 <button data-type="btn-start" class="btn btn-start">Start</button>
@@ -35,15 +45,15 @@
             <div id="instructions">
                 <h3>How to play</h3>
                 <p>Press Start</p>
-                <p>Pick your option: Odds or Evens</p>
-                <p>Then pick the number you want to play with</p>
-                <p>Left image represents your number, right image represents Cpu's</p>
-                <p>If your number + Cpu's matches your option, you WIN!</p>
-                <p>Press exit at any time to leave the game</p>
+                <p>Pick Odds or Evens</p>
+                <p>Pick number you want to play with</p>
+                <p>First hand is your play, second is Cpu's</p>
+                <p>Press exit or click at the top to leave</p>
             </div>
         </div>
 
-        <!-- Game container will display images showing results and scores -->
+        <!-- game container section - hidden when page loads, displayed when game starts -->
+
         <div id="game-container" class="hide">
             <div id="option-buttons">
                 <button data-type="btn-odds" class="btn btn-odds">Odds</button>
@@ -73,6 +83,8 @@
             <button data-type="btn-exit" class="btn btn-exit">Exit the Game</button>
         </div>
     </div>
+
+    <!-- footer section -->
 
     <footer>
         <p>This project has been created for education purposes.</p>
