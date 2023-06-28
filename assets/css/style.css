@@ -39,6 +39,10 @@ header h1 {
     text-decoration: none;
 }
 
+header a {
+    text-decoration: none;
+}
+
 /* footer styling */
 
 footer {
