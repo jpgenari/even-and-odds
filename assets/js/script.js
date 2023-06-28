@@ -181,14 +181,14 @@ function animation() {
  * It triggers checkWinner functions
  */
 function runGame() {
-    cpuNumberSelected = (Math.floor(Math.random() * (images.length + 1)));
+    cpuNumberSelected = (Math.floor(Math.random() * images.length));
     console.log('CPU Number')
     console.log(cpuNumberSelected);
 
     finalNumber = (cpuNumberSelected + userNumberSelected) % 2
     enableNumberButton();
     checkWinner();
-    
+}
 /**
  * Function to check if winner is user or cpu by comparing user selected option vs final number
  * It removes the class 'start' to the images to stop CSS animation
@@ -200,7 +200,7 @@ function checkWinner() {
         finalResult = 'Winner';
     } else {
         finalResult = 'Lose'
-    }}
+    }
     console.log(finalResult); 
 
     gameContainer.classList.remove('start');
