@@ -9,8 +9,11 @@
 <body>
     
     <!-- This will be the main game container -->
-    <header>
-        <h1>Odds and Evens</h1>
+    <header id="header">
+        <a href="index.html">
+            <h1>Odds and Evens </h1>
+            <span id="logo"><i class="fa-regular fa-hand-peace"></i></span>
+        </a>
     </header>
     
     <div id="main-container">
@@ -23,7 +26,7 @@
         <!-- Instructions container containing an initial image and instructions to show users how to play, this container will be hidden one game starts -->
         <div id="instructions-container">
             <div id="start-button">
-                <button data-type="btn-start" class="btn btn--start">Start</button>
+                <button data-type="btn-start" class="btn btn-start">Start</button>
             </div>
             <div id="main-image">
                 <div class="user_image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left"></div>
@@ -43,18 +46,18 @@
         <!-- Game container will display images showing results and scores -->
         <div id="game-container" class="hide">
             <div id="option-buttons">
-                <button data-type="btn-odds" class="btn btn--odds">Odds</button>
+                <button data-type="btn-odds" class="btn btn-odds">Odds</button>
                 <span>or</span>
-                <button data-type="btn-evens" class="btn btn--evens">Evens</button>
+                <button data-type="btn-evens" class="btn btn-evens">Evens</button>
             </div>
             <div id="numbers-buttons">
                 <p>Pick your number!</p>
-                <button data-type="btn-0" class="btn btn--odds number-button disable">0</button>
-                <button data-type="btn-1" class="btn btn--odds number-button disable">1</button>
-                <button data-type="btn-2" class="btn btn--odds number-button disable">2</button>
-                <button data-type="btn-3" class="btn btn--odds number-button disable">3</button>
-                <button data-type="btn-4" class="btn btn--odds number-button disable">4</button>
-                <button data-type="btn-5" class="btn btn--odds number-button disable">5</button>
+                <button data-type="btn-0" class="btn btn-odds number-button disable">0</button>
+                <button data-type="btn-1" class="btn btn-odds number-button disable">1</button>
+                <button data-type="btn-2" class="btn btn-odds number-button disable">2</button>
+                <button data-type="btn-3" class="btn btn-odds number-button disable">3</button>
+                <button data-type="btn-4" class="btn btn-odds number-button disable">4</button>
+                <button data-type="btn-5" class="btn btn-odds number-button disable">5</button>
             </div>
             <div id="result-images">
                 <div class="user_image"><img src="assets/images/0-finger.webp" alt="Closed hand turned to left" id="user-image"></div>
@@ -67,13 +70,13 @@
                     <p><span id="rounds-played">0</span> Rounds</p>
                 </div>
             </div>
-            <button data-type="btn-exit" class="btn btn--exit">Exit the Game</button>
+            <button data-type="btn-exit" class="btn btn-exit">Exit the Game</button>
         </div>
     </div>
 
     <footer>
         <p>This project has been created for education purposes.</p>
-        <ul>
+        <ul id="social-networks">
             <li>
                 <a href="https://github.com/jpgenari/even-and-odds" target="_blank" rel="noopener" aria-label="Visit game's GitHub repository (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
             </li>
