@@ -68,67 +68,6 @@ function getUserOption(userButton) {
 }
 
 /**
- * Function to show selected Option button after user click
- */
-function activeOptionButton() {
-    
-    let prevOptionButton = null;
-    
-    const selectedOptionButton = document.getElementById('option-buttons');
-    
-    selectedOptionButton.addEventListener('click', function (e) {
-        let isOptionButton = e.target.nodeName === 'BUTTON';
-        if (!isOptionButton) {
-            return;
-        }
-        e.target.classList.add('active');
-        if (prevOptionButton !== null) {
-            prevOptionButton.classList.remove('active');
-        }
-        prevOptionButton = e.target;
-});
-}
-
-/**
- * Function to show selected Option button after user click
- */
-function activeNumberButton() {
-    let prevNumberButton = null;
-
-    const selectedNumberButton = document.getElementById('numbers-buttons');
-    
-    selectedNumberButton.addEventListener('click', function (e) {  
-        let isNumberButton = e.target.nodeName === 'BUTTON';
-        if (!isNumberButton) {
-            return;
-        }
-        e.target.classList.add('active');
-        if (prevNumberButton !== null) {
-            prevNumberButton.classList.remove('active');
-        }
-        prevNumberButton = e.target;
-});
-}
-
-/**
- * Function to prevent user to click on numbers again before animation ends - not working
- */
-function pauseNumberButton() {
-    
-    let numberButton = document.querySelectorAll('button.btn_number');
-    numberButton.forEach(button => button.classList.add('disable'));
-}
-
-/**
- * This function enables the number selection buttons, forcing user first pick-up a game option
- */
-function enableNumberButton() {
-    
-    let numberButton = document.querySelectorAll('button.btn_number');
-    numberButton.forEach(button => button.classList.remove('disable'));
-}
-
-/**
  * This function get the user input for the game from 1 to 5 and run the game
  * It triggers animationResults function
  */
@@ -261,6 +200,68 @@ function showResults() {
         document.getElementById('show-results').innerHTML = `${totalSum} is ${oddsOrEvens}, CPU WON! Try again!`;
     }
     incrementPlayed();
+}
+
+
+/**
+ * This function enables the number selection buttons, forcing user first pick-up a game option
+ */
+function enableNumberButton() {
+    
+    let numberButton = document.querySelectorAll('button.btn_number');
+    numberButton.forEach(button => button.classList.remove('disable'));
+}
+
+/**
+ * Function to prevent user to click on numbers again before animation ends - not working
+ */
+function pauseNumberButton() {
+    
+    let numberButton = document.querySelectorAll('button.btn_number');
+    numberButton.forEach(button => button.classList.add('disable'));
+}
+
+/**
+ * Function to show selected Option button after user click
+ */
+function activeOptionButton() {
+    
+    let prevOptionButton = null;
+    
+    const selectedOptionButton = document.getElementById('option-buttons');
+    
+    selectedOptionButton.addEventListener('click', function (e) {
+        let isOptionButton = e.target.nodeName === 'BUTTON';
+        if (!isOptionButton) {
+            return;
+        }
+        e.target.classList.add('active');
+        if (prevOptionButton !== null) {
+            prevOptionButton.classList.remove('active');
+        }
+        prevOptionButton = e.target;
+});
+}
+
+/**
+ * Function to show selected Number button after user click
+ */
+function activeNumberButton() {
+    let prevNumberButton = null;
+
+    const selectedNumberButton = document.getElementById('numbers-buttons');
+    
+    selectedNumberButton.addEventListener('click', function (e) {  
+        let isNumberButton = e.target.nodeName === 'BUTTON';
+        if (!isNumberButton) {
+            return;
+        }
+        e.target.classList.add('active');
+        if (prevNumberButton !== null) {
+            prevNumberButton.classList.remove('active');
+        }
+        prevNumberButton = e.target;
+});
 }
 
 /**
