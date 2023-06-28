@@ -111,7 +111,7 @@ function activeNumberButton() {
  * Function to prevent user to click on numbers again before animation ends - not working
  */
 function pauseNumberButton() {
-    let numberButton = document.querySelectorAll('button.number-button');
+    let numberButton = document.querySelectorAll('button.btn_number');
     numberButton.forEach(button => button.classList.add('disable'));
 }
 
@@ -119,7 +119,7 @@ function pauseNumberButton() {
  * This function enables the number selection buttons, forcing user first pick-up a game option
  */
 function enableNumberButton() {
-    let numberButton = document.querySelectorAll('button.number-button');
+    let numberButton = document.querySelectorAll('button.btn_number');
     numberButton.forEach(button => button.classList.remove('disable'));
 }
 
