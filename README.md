@@ -1,39 +1,148 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Odds and Evens
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+![Responsive Mockup]() 
 
-## Codeanywhere Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### Existing Features
 
-`python3 -m http.server`
+- __Feature 1__
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+  - Feature 1.1.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### Features Left to Implement or Future Features
 
-`http_server`
+- __Feature 1__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  - Feature 1.1.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Testing
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The website has been tested for its functionalities working as expected on multiple browsers and devices (mobile tested using Inspect tool).
 
-To log into the Heroku toolbelt CLI:
+### Workflow testing
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Functionalities__
+  
+    - Functionality 1
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- __Layout and Design__
 
----
+[Am I Responsive?](https://ui.dev/amiresponsive?url=https://jpgenari.github.io/even-and-odds/) shows all available common layouts.
 
-Happy coding!
+- __Tested Browsers and Devices__
+
+    - Desktop:
+      - Google Chrome
+      - Mozilla Firefox
+      - Apple Safari
+    - Tablet *tested through Google Chrome Inspector*:
+      - *iPad Air*
+      - *iPad Mini*
+      - *Surface Pro 7*
+      - *Google Nest Hub* 
+    - Mobile *tested through Google Chrome Inspector*:
+      - iPhone 13 Pro (Google Chrome, Mozilla Firefox and Apple Safari)
+      - *iPhone SE*
+      - *iPhone XR*
+      - *Pixel 5*
+      - *Samsung Galaxy S8+*
+      - *Samsung Galaxy S20 Ultra*
+
+### Validator Testing
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator]().
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator]().
+- Javascript
+  - No errors were found when passing through the official [(JS Hint) validator]().
+- Accessibility
+  - No error  were found when passing through the official [WAVE evaluation tool]();
+  - Scored 100 for Accessibility when passing through Google Chrome Inspector Lighthouse
+
+![Lighthouse]()
+
+
+### Bugs
+
+Bug bugs
+
+__Solved Bugs__
+
+- __Bug 1__
+  - Solved through StackOverflow question
+
+    - Code example with bug:
+  
+    ```
+    <section>
+        <div id="image"></div>
+        <div id="text-box" class="size positioning padding">
+            <h2>text</h2>
+        </div>
+    </section>
+    ```
+
+    - Code example fixed:
+  
+    ```
+    <section>
+        <div id="image"></div>
+        <div id="text-box" class="size positioning>
+            <div class="padding">
+                <h2>text</h2>
+            </div>
+        </div>
+    </section>
+    ```
+
+  - 
+  
+- __Bug 2__
+  - solved with tutor support.
+  
+    ```
+    .map-wrapper { /*div enclosing iframe*/
+        width: 30%;
+        height: 70%;
+        top: 12%;
+        left: 7%;
+    }
+    iframe {
+        display: block; /*tag display: block made the width and height set on CSS control the iframe dimensions*/
+        height: 100%;
+        width: 100%;
+    }
+    ```
+
+### Unfixed Bugs
+
+  - There are no unfixed bugs. 
+
+## Deployment
+
+- The website was deployed to GitHub pages. Follow below the stops taken:
+  - In the GitHub repository, navigate to the Settings tab;
+  - Go to the Pages settings, and under Source select on the drop-down menu, select the Main Branch and save;
+  - After saving, hold on a little bit and the page will automatically refresh with the available url and a button to visit site.
+
+The live link can be found here - <https://jpgenari.github.io/even-and-odds/>
+
+## Credits
+
+### Content
+
+- The webside base code was created based on the [CI Love Running](https://github.com/Code-Institute-Solutions/Love-Running-Solutions) project - header, hero section and footer used the project's base code then edited to fit Gaming Buddies needs;
+- The icons used on the website were taken from [Font Awesome](https://fontawesome.com/search?o=r&m=free) free icons;
+- Solution for the fixed header and footer taken from [Tutorial Republic](https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-footer-using-css.php#:~:text=Answer%3A%20Use%20CSS%20fixed%20positioning,bottom%20of%20the%20viewport%20accordingly);
+- Solution for the "inset" tag for positioning from [Stefan Judis](https://www.stefanjudis.com/today-i-learned/inset-is-a-shorthand-for-top-right-bottom-and-left/#:~:text=inset%20is%20a%20shorthand%20that,know%20from%20margin%20%2F%20padding%20declarations);
+- Solution for the iframe with dynamic size from [Tutorial Republic](https://www.tutorialrepublic.com/faq/how-to-create-a-full-screen-iframe-with-100-percent-height.php#:~:text=You%20can%20simply%20set%20the,height%20and%20width%20of%20100%25);
+- Solution for favicon on GitHub Pages deployments from [iTecNote](https://itecnote.com/tecnote/html-favicon-with-github-pages/).
+
+### Media
+
+- The images used on sections hero, Who we are and Join us! were taken from [Pexels](https://www.pexels.com/);
+- The image used on section meet up was taken from [Unsplash](https://unsplash.com/).
