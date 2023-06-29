@@ -1,6 +1,6 @@
 const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
-let userResult;
+let userOption;
 let userNumberSelected;
 let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 let finalNumber;
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let userNumber = this.getAttribute("data-type");
                 getUserNumber(userNumber);
             }
-        })
+        });
     }
 });
 
@@ -118,7 +118,7 @@ function animation() {
 
     gameContainer.classList.add('start');
 
-    document.getElementById('show-results').innerHTML = 'Waiting...'
+    document.getElementById('show-results').innerHTML = 'Waiting...';
     
     timeout = setTimeout(runGame, 1500,);
 }
@@ -131,11 +131,11 @@ function runGame() {
     
     cpuNumberSelected = (Math.floor(Math.random() * images.length));
     
-    console.log('CPU Number')
+    console.log('CPU Number');
     
     console.log(cpuNumberSelected);
 
-    finalNumber = (cpuNumberSelected + userNumberSelected) % 2
+    finalNumber = (cpuNumberSelected + userNumberSelected) % 2;
     
     enableNumberButton();
     checkWinner();
@@ -151,7 +151,7 @@ function checkWinner() {
     if (userOption === finalNumber) {
         finalResult = 'Winner';
     } else {
-        finalResult = 'Lose'
+        finalResult = 'Lose';
     }
     
     console.log(finalResult); 
@@ -184,13 +184,13 @@ function displayImages() {
  */
 function showResults() {
     
-    let totalSum = userNumberSelected + cpuNumberSelected
+    let totalSum = userNumberSelected + cpuNumberSelected;
     let oddsOrEvens;
     
     if (finalNumber === 0) {
-        oddsOrEvens = "even"
+        oddsOrEvens = "even";
     } else {
-        oddsOrEvens = "odd"
+        oddsOrEvens = "odd";
     }
 
     if (finalResult === 'Winner') {
