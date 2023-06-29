@@ -22,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute("data-type") === "btn-start") {
                 startGame();
             } else if (this.getAttribute("data-type") === "btn-exit") {
-                location.href = "./index.html";
-                
-                console.log('Exit');
+                location.href = "index.html";
 
             } else if (this.getAttribute("data-type") === "btn-odds" || this.getAttribute("data-type") === "btn-evens") {
                 let userButton = this.getAttribute("data-type");
@@ -41,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
  * This function starts the game by switching the screens
  */
 function startGame() {
-
-    console.log('Started');
     
     instructionsContainer.classList.add('hide');
     gameContainer.classList.remove('hide');
@@ -50,21 +46,18 @@ function startGame() {
 
 /** 
  * This function gets the user selection between odds and evens
- * It triggers enableNumberButton function
+ * It triggers enableNumberButtons function
  */
 function getUserOption(userButton) {
-    
-    console.log('User selection');
 
     if (userButton === 'btn-odds') {
         userOption = 1;
     } else if (userButton === 'btn-evens') {
         userOption = 0;
     }
-    console.log(userOption);
 
     activeOptionButton();
-    enableNumberButton();
+    enableNumberButtons();
 }
 
 /**
@@ -73,8 +66,6 @@ function getUserOption(userButton) {
  */
 
 function getUserNumber(userNumber) {
-    
-    console.log('User number');
 
     if (userNumber === 'btn-0') {
         userNumberSelected = 0;
@@ -89,10 +80,8 @@ function getUserNumber(userNumber) {
     } else if (userNumber === 'btn-5') {
         userNumberSelected = 5;
     }
-
-    console.log(userNumberSelected);
     
-    pauseNumberButton();
+    disableNumberButton();
     activeNumberButton();
     animation();
 }
@@ -130,14 +119,10 @@ function animation() {
 function runGame() {
     
     cpuNumberSelected = (Math.floor(Math.random() * images.length));
-    
-    console.log('CPU Number');
-    
-    console.log(cpuNumberSelected);
 
     finalNumber = (cpuNumberSelected + userNumberSelected) % 2;
     
-    enableNumberButton();
+    enableNumberButtons();
     checkWinner();
 }
 
@@ -154,8 +139,6 @@ function checkWinner() {
         finalResult = 'Lose';
     }
     
-    console.log(finalResult); 
-
     gameContainer.classList.remove('start');
 
     displayImages();
@@ -206,19 +189,23 @@ function showResults() {
 /**
  * This function enables the number selection buttons, forcing user first pick-up a game option
  */
-function enableNumberButton() {
+function enableNumberButtons() {
     
-    let numberButton = document.querySelectorAll('button.btn_number');
-    numberButton.forEach(button => button.classList.remove('disable'));
+    let numberButtons = document.querySelectorAll('.btn-number');
+    numberButtons.forEach(function(button) {
+        button.classList.remove('disable');
+    });
 }
 
 /**
- * Function to prevent user to click on numbers again before animation ends - not working
+ * Function to prevent user to click on numbers again before animation ends
  */
-function pauseNumberButton() {
+function disableNumberButton() {
     
-    let numberButton = document.querySelectorAll('button.btn_number');
-    numberButton.forEach(button => button.classList.add('disable'));
+    let numberButtons = document.querySelectorAll('.btn-number');
+    numberButtons.forEach(function(button) {
+        button.classList.add('disable');
+    });
 }
 
 /**

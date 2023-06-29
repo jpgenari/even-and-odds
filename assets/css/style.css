@@ -84,15 +84,15 @@ footer p {
     transition: all 0.5s;
 }
 
-.btn_start, .btn_number {
+.btn-start, .btn-number {
     margin-top: 20px;
 }
 
-.btn_odds, .btn_evens, .btn_exit {
+.btn-odds, .btn-evens, .btn-exit {
     margin: 20px;
 }
 
-.btn_number {
+.btn-number {
     width: 13%;
     font-size: 1.3rem;
     margin-left: 2px;
@@ -170,13 +170,13 @@ footer p {
     padding: 10px 10px 0 10px;
 }
 
-.user_image img {
+.user-image img {
     transform: rotate(90deg);
     width: auto;
     height: 200px;
 }
 
-.cpu_image img {
+.cpu-image img {
     transform: rotate(-90deg) rotateY(180deg);
     width: auto;
     height: 200px;
@@ -184,7 +184,7 @@ footer p {
 
 /* images animation styling */
 
-#game-container.start .user_image { 
+#game-container.start .user-image { 
     transform-origin: left;
     animation: userShake 0.7s ease infinite;
 }
@@ -195,7 +195,7 @@ footer p {
     }
 }
 
-#game-container.start .cpu_image {
+#game-container.start .cpu-image {
     transform-origin: right;
     animation: cpuShake 0.7s ease infinite;
 }
@@ -234,12 +234,12 @@ footer p {
 
 /* for small to extra-small screens size from 510px wide and down */
 
-@media screen and (max-width:510px) {
+@media screen and (max-width: 510px) {
     #main-image, #result-images {
         height: 170px;
     }
 
-    .user_image img, .cpu_image img {
+    .user-image img, .cpu-image img {
         height: 150px;
     }
 

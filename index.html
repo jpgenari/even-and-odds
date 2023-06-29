@@ -18,24 +18,24 @@
     <!-- header section -->
 
     <header>
-        <a href="index.html">
+        <a href="index.html" aria-label="Go to the home page pausing the game">
             <h1>Odds and Evens <i class="fa-regular fa-hand-peace"></i></h1>
         </a>
     </header>
     
     <!-- main game container -->
 
-    <div id="main-container">
+    <main id="main-container">
 
         <!-- instructions container section - hidden when game starts -->
 
         <div id="instructions-container">
             <div>
-                <button data-type="btn-start" class="btn btn_start">Start</button>
+                <button data-type="btn-start" class="btn btn-start">Start</button>
             </div>
             <div id="main-image">
-                <div class="user_image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers"></div>
-                <div class="cpu_image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers"></div>
+                <div class="user-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers"></div>
+                <div class="cpu-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers"></div>
             </div>
             <div id="instructions">
                 <h2>How to play</h2>
@@ -53,21 +53,21 @@
 
         <div id="game-container" class="hide">
             <div id="option-buttons">
-                <button data-type="btn-odds" class="btn btn_odds">Odds</button>
-                <button data-type="btn-evens" class="btn btn_evens">Evens</button>
+                <button data-type="btn-odds" class="btn btn-odds">Odds</button>
+                <button data-type="btn-evens" class="btn btn-evens">Evens</button>
             </div>
             <div id="numbers-buttons">
                 <p>Your number...</p>
-                <button data-type="btn-0" class="btn btn_number disable">0</button>
-                <button data-type="btn-1" class="btn btn_number disable">1</button>
-                <button data-type="btn-2" class="btn btn_number disable">2</button>
-                <button data-type="btn-3" class="btn btn_number disable">3</button>
-                <button data-type="btn-4" class="btn btn_number disable">4</button>
-                <button data-type="btn-5" class="btn btn_number disable">5</button>
+                <button data-type="btn-0" class="btn btn-number disable">0</button>
+                <button data-type="btn-1" class="btn btn-number disable">1</button>
+                <button data-type="btn-2" class="btn btn-number disable">2</button>
+                <button data-type="btn-3" class="btn btn-number disable">3</button>
+                <button data-type="btn-4" class="btn btn-number disable">4</button>
+                <button data-type="btn-5" class="btn btn-number disable">5</button>
             </div>
             <div id="result-images">
-                <div class="user_image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="user-image"></div>
-                <div class="cpu_image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="cpu-image"></div>
+                <div class="user-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="user-image"></div>
+                <div class="cpu-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="cpu-image"></div>
             </div>
             <div id="results-container">
                 <p id="show-results"></p>
@@ -76,9 +76,9 @@
                     <p><span id="rounds-played">0</span> Rounds</p>
                 </div>
             </div>
-            <button data-type="btn-exit" class="btn btn_exit">Exit</button>
+            <button data-type="btn-exit" class="btn btn-exit">Exit</button>
         </div>
-    </div>
+    </main>
 
     <!-- footer section -->
 
@@ -86,7 +86,7 @@
         <p>This project has been created for education&nbsp;purposes.</p>
         <ul id="social-networks">
             <li>
-                <a href="https://github.com/jpgenari/even-and-odds" target="_blank" rel="noopener" aria-label="Visit game's GitHub repository (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/jpgenari" target="_blank" rel="noopener" aria-label="Visit student's GitHub profile (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
             </li>
             <li>
                 <a href="https://www.linkedin.com/in/jpgenari/" target="_blank" rel="noopener" aria-label="Visit student's linkedIn profile (opens in a new tab)"><i class="fa-brands fa-linkedin"></i></a>
