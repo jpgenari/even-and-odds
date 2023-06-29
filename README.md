@@ -6,17 +6,18 @@ The game proves itself as good tool for a quick stress relief allowing users to 
 
 While playing, the users will also learn how to play the game, which can be used as a decision making tool, especially amongst friends, to determine who get the last cookie, for example. Users can either use the game itself or learn their own hands to play.
 
-Odds 
-
-![Responsive Mockup]() 
+![Responsive Mockup](/assets/images/readme-am-i-responsive.png) 
 
 ## Features
 
 ### Existing Features
 
-- __Feature 1__
+- __Header__
 
-  - Feature 1.1.
+  - Located at the top of the page, the header features the game name **Odds and Evens** followed by an simple icon representing playing with hands by showing the victory signal. The game name is presented in a easy readable font and using colour with high contrast with footer background colour.
+  
+  &nbsp;
+  ![Header](/assets/images/readme-header.png)
 
 ### Features Left to Implement or Future Features
 
