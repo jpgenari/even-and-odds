@@ -1,6 +1,12 @@
 # Odds and Evens
 
+Odds and Evens is a game developed with two main objectives: provide a quick gaming session to its users when they are in the middle of a quick break, either from working time or studying session. 
 
+The game proves itself as good tool for a quick stress relief allowing users to play against the Cpu. They will opt between odds and evens, then pick up a number between 0 to 5, representing their own hands for their game-play. From there, the Cpu will generate a completely random number within the same range. The result will be based on the sum of both numbers, which will always be either and odd or even number. If number type matches the opted one, there we have a winner - user or Cpu.
+
+While playing, the users will also learn how to play the game, which can be used as a decision making tool, especially amongst friends, to determine who get the last cookie, for example. Users can either use the game itself or learn their own hands to play.
+
+Odds 
 
 ![Responsive Mockup]() 
 
