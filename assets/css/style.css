@@ -60,7 +60,7 @@ footer {
 }
 
 footer span {
-    text-decoration: underline;
+    font-style: italic;
     letter-spacing: 1px;
 }
 
