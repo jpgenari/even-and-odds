@@ -16,8 +16,9 @@
 body {
     background-color: rgb(244, 244, 244);
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 20px;
@@ -27,8 +28,6 @@ body {
 
 header {
     height: auto;
-    position: fixed;
-    display: flex;
     top: 0;
     padding: 20px 0;
     letter-spacing: 2px;
@@ -46,14 +45,17 @@ header a {
 /* footer styling */
 
 footer {
+    /* display: flex; */
     height: auto;
-    position: fixed;
+    margin-top: auto;
     bottom: 0;
     padding: 20px 0;
+    column-gap: 2rem;
+    
 }
 
 footer p {
-    font-size: 120%;
+    font-size: 100%;
     padding: 10px 0;
 }
 
@@ -62,7 +64,7 @@ footer p {
 }
 
 #social-networks i {
-    font-size: 160%;
+    font-size: 110%;
     padding: 0 5px;
 }
 
