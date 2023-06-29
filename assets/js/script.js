@@ -1,5 +1,5 @@
-const instructionsContainer = document.getElementById('instructions-container');
-const gameContainer = document.getElementById('game-container');
+let instructionsContainer = document.getElementById('instructions-container');
+let gameContainer = document.getElementById('game-container');
 let userOption;
 let userNumberSelected;
 let images = ["assets/images/0-finger.webp", "assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
@@ -138,7 +138,7 @@ function checkWinner() {
     } else {
         finalResult = 'Lose';
     }
-    
+
     gameContainer.classList.remove('start');
 
     displayImages();
@@ -215,7 +215,7 @@ function activeOptionButton() {
     
     let prevOptionButton = null;
     
-    const selectedOptionButton = document.getElementById('option-buttons');
+    let selectedOptionButton = document.getElementById('option-buttons');
     
     selectedOptionButton.addEventListener('click', function (e) {
         let isOptionButton = e.target.nodeName === 'BUTTON';
@@ -236,7 +236,7 @@ function activeOptionButton() {
 function activeNumberButton() {
     let prevNumberButton = null;
 
-    const selectedNumberButton = document.getElementById('numbers-buttons');
+    let selectedNumberButton = document.getElementById('numbers-buttons');
     
     selectedNumberButton.addEventListener('click', function (e) {  
         let isNumberButton = e.target.nodeName === 'BUTTON';
