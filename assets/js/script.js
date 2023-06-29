@@ -2,7 +2,7 @@ const instructionsContainer = document.getElementById('instructions-container');
 const gameContainer = document.getElementById('game-container');
 let userOption;
 let userNumberSelected;
-let images = ["assets/images/0-finger.webp", "assets/images/1-fingers.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
+let images = ["assets/images/0-finger.webp", "assets/images/1-finger.webp", "assets/images/2-fingers.webp", "assets/images/3-fingers.webp", "assets/images/4-fingers.webp", "assets/images/5-fingers.webp"];
 let finalNumber;
 let finalResult;
 let cpuNumberSelected;

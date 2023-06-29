@@ -172,10 +172,14 @@ footer p {
 
 .user_image img {
     transform: rotate(90deg);
+    width: auto;
+    height: 200px;
 }
 
 .cpu_image img {
     transform: rotate(-90deg) rotateY(180deg);
+    width: auto;
+    height: 200px;
 }
 
 /* images animation styling */
@@ -207,7 +211,6 @@ footer p {
 @media screen and (max-width: 670px) {
     #main-container {
         width: 97%;
-        max-height: auto;
     }
 
     #main-image, #result-images {
