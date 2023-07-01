@@ -123,105 +123,111 @@ While playing, the users will also learn how to play the game, which can be used
     - *Surface Pro 7*
     - *Google Nest Hub*
   - Mobile *tested through Google Chrome Inspector*:
-      - iPhone 13 Pro (Google Chrome, Mozilla Firefox, Apple Safari and DuckDuckGo)
-      - *iPhone SE*
-      - *iPhone XR*
-      - *Pixel 5*
-      - *Samsung Galaxy S8+*
-      - *Samsung Galaxy S20 Ultra*
+    - iPhone 13 Pro (Google Chrome, Mozilla Firefox, Apple Safari and DuckDuckGo)
+    - *iPhone SE*
+    - *iPhone XR*
+    - *Pixel 5*
+    - *Samsung Galaxy S8+*
+    - *Samsung Galaxy S20 Ultra*
 
 ### **Validator Testing**
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator]().
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjpgenari.github.io%2Feven-and-odds%2F).
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator]().
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjpgenari.github.io%2Feven-and-odds%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 - Javascript
-  - No errors were found when passing through the official [(JS Hint) validator]().
+  - No errors were found when passing through the official [(JS Hint) validator](https://jshint.com/).
+  - There are a total of 40 warnings shown in JSHint, 38 warnings related related to variable 'let' only available on ES6 (esversion: 6); 1 warning related to 'trailing comma in argument lists' only available on ES8 (esversion: 8); and 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
+  ![JS Hint](/assets/images/readme-jshint.png)
 - Accessibility
-  - No error  were found when passing through the official [WAVE evaluation tool]();
-  - Scored 100 for Accessibility when passing through Google Chrome Inspector Lighthouse
+  - No error  were found when passing through the official [WAVE evaluation tool](https://wave.webaim.org/report#/https://jpgenari.github.io/even-and-odds/);
+  - Scored 100 for Accessibility when passing through Google Chrome Inspector Lighthouse.
+  ![Lighthouse]()
 
-![Lighthouse]()
+### **Bugs**
 
+In development stage, multiple minor bugs were noticed, most of them while creating functions and styling. However, 2 bugs stood out.
 
-### Bugs
+**Solved Bugs**
 
-Bug bugs
+- **Function returning same value with assign event listener to buttons**
 
-__Solved Bugs__
+  - After implementing solution to make [If/Else statement execute with event listener inside](https://stackoverflow.com/questions/48167887/if-else-statement-not-executing-correctly-with-event-listener-inside-javascript), the functions getUserOption() and getUserNumber() were still returning the same value. The bug was taking place due to two semicolons misplaced in the code (after 'btn-evens' condition and after 'btn-5' condition). The but was solved with the help of [Stack Overflow community](https://stackoverflow.com/questions/76551168/functions-returning-same-value-even-with-assigned-event-listener-to-the-buttons).
 
-- __Bug 1__
-  - Solved through StackOverflow question
-
-    - Code example with bug:
+  - Code example with bug:
   
     ```
-    <section>
-        <div id="image"></div>
-        <div id="text-box" class="size positioning padding">
-            <h2>text</h2>
-        </div>
-    </section>
-    ```
+    function getUserOption(userOption) {
+    let userResult;
 
-    - Code example fixed:
+    if (userOption === 'btn-odds') {
+      userResult = 1;
+    } else if (userOption === 'btn-evens'); {
+      userResult = 0;
+    }}
+
+    function getUserNumber(userNumber) {
+
+    let userNumberSelected;
+
+    if (userNumber === 'btn-1') {
+        userNumberSelected = 1;
+    } else if (userNumber === 'btn-2') {
+        userNumberSelected = 2;
+    } else if (userNumber === 'btn-3') {
+        userNumberSelected = 3;
+    } else if (userNumber === 'btn-4') {
+        userNumberSelected = 4;
+    } else if (userNumber === 'btn-5'); {
+        userNumberSelected = 5;
+    }}
+    ```
+- **Game animation not working**
   
-    ```
-    <section>
-        <div id="image"></div>
-        <div id="text-box" class="size positioning>
-            <div class="padding">
-                <h2>text</h2>
-            </div>
-        </div>
-    </section>
-    ```
-
-  - 
+  - When implementing the game animation, initially it was not working as the implemented target was not working. This animation works throughout CSS and Javascript. Animation starts when class 'start' is added to the element and ends when the same class is removed by Javascript function. The bug was taking place due to the element 'img' being nested inside an element 'span'. This was fixed by replacing the 'span' tag for a 'div' element which allowed the target from CSS act over the element as expected. This solution has been provided by **Code Institute Tutor Support**.
   
-- __Bug 2__
-  - solved with tutor support.
-  
+  - Code example with bug:
+    
     ```
-    .map-wrapper { /*div enclosing iframe*/
-        width: 30%;
-        height: 70%;
-        top: 12%;
-        left: 7%;
-    }
-    iframe {
-        display: block; /*tag display: block made the width and height set on CSS control the iframe dimensions*/
-        height: 100%;
-        width: 100%;
-    }
+    <div id="result-images">
+        <span class="user-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="user-image"></span>
+        <span class="cpu-image"><img src="assets/images/0-finger.webp" alt="Closed hand showing no fingers" id="cpu-image"></span>
+    </div>
     ```
 
-### Unfixed Bugs
+### **- Unfixed Bugs**
 
-  - There are no unfixed bugs. 
+- There is minor bug that sometimes happens, causing images with final results to be milliseconds delayed after animation finishes. It only happens when the images are displayed for the first time which indicates this is related to image loading time - after first load and saved in cache, the bug no longer is seen. But also does not take place when running locally, not deployed.
 
-## Deployment
+## **Deployment**
 
-- The website was deployed to GitHub pages. Follow below the stops taken:
+- The game is deployed to GitHub pages. Follow below the stops taken:
   - In the GitHub repository, navigate to the Settings tab;
   - Go to the Pages settings, and under Source select on the drop-down menu, select the Main Branch and save;
   - After saving, hold on a little bit and the page will automatically refresh with the available url and a button to visit site.
 
 The live link can be found here - <https://jpgenari.github.io/even-and-odds/>
 
-## Credits
+## **Credits**
 
-### Content
+### **Content**
 
-- The webside base code was created based on the [CI Love Running](https://github.com/Code-Institute-Solutions/Love-Running-Solutions) project - header, hero section and footer used the project's base code then edited to fit Gaming Buddies needs;
-- The icons used on the website were taken from [Font Awesome](https://fontawesome.com/search?o=r&m=free) free icons;
-- Solution for the fixed header and footer taken from [Tutorial Republic](https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-footer-using-css.php#:~:text=Answer%3A%20Use%20CSS%20fixed%20positioning,bottom%20of%20the%20viewport%20accordingly);
-- Solution for the "inset" tag for positioning from [Stefan Judis](https://www.stefanjudis.com/today-i-learned/inset-is-a-shorthand-for-top-right-bottom-and-left/#:~:text=inset%20is%20a%20shorthand%20that,know%20from%20margin%20%2F%20padding%20declarations);
-- Solution for the iframe with dynamic size from [Tutorial Republic](https://www.tutorialrepublic.com/faq/how-to-create-a-full-screen-iframe-with-100-percent-height.php#:~:text=You%20can%20simply%20set%20the,height%20and%20width%20of%20100%25);
-- Solution for favicon on GitHub Pages deployments from [iTecNote](https://itecnote.com/tecnote/html-favicon-with-github-pages/).
+- Game code was inspired by [Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/tree/master) project - events listener structure with 'data-type' and results functions built based in the project's.
+- Game design and animation styling were inspired/taken from [ULTIMATE Rock Paper Scissors](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/) project portfolio scope and [Rock Paper Scissors](https://www.codingnepalweb.com/rock-paper-scissors-game-javascript/) game.
+- The icons used on the game were taken from [Font Awesome](https://fontawesome.com/search?o=r&m=free) free icons;
+- The fonts used on the game were taken from [Google Fonts](https://fonts.google.com/);
+- Favicon used on the game was generated in [favicon.io](https://favicon.io/);
+- Solution to execute If/Else statement with event listener inside was taken from [Stack Overflow](https://stackoverflow.com/questions/48167887/if-else-statement-not-executing-correctly-with-event-listener-inside-javascript) question.
+- Solution to insert images with Javascript was taken from [Quora question](https://www.quora.com/How-do-you-insert-an-image-in-Javascript);
+- Solution for setTimeout() was taken from [w3Schools](https://www.w3schools.com/jsref/met_win_settimeout.asp);
+- Solution for activeOptionButton() and activeNumberButton() functions was taken from [SoftAythor](https://softauthor.com/make-selected-clicked-button-active-in-javascript/);
+- Solution for enableNumberButtons() and disableNumberButton() functions taken from [Stack Overflow question](https://stackoverflow.com/questions/53242127/disabling-multiple-buttons-with-the-same-class-attribute-but-different-ids), [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) and [bobbyhadz blog](https://bobbyhadz.com/blog/javascript-remove-class-from-multiple-elements);
+- Information about Arrow Functions was taken from [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions);
+- Information about how to convert Arrow Function to regular function was taken from [StackExchange](https://superuser.com/questions/1721957/how-to-convert-arrow-function-to-regular-function);
+- Styling solutions for shadow box, header and footer positioning and handling images with CSS were taken from [Web Dev Simplified video](https://youtu.be/riDzcEQbX6k), [CSS-TRICKS - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY) and [30 seconds of code](https://www.30secondsofcode.org/css/s/footer-at-the-bottom/#:~:text=This%20is%20done%20by%20setting,and%20flex%2Ddirection%3A%20column%20.);
+- Some debugging performed with support of [ChatGPT](https://chat.openai.com/).
 
 ### Media
 
-- The images used on sections hero, Who we are and Join us! were taken from [Pexels](https://www.pexels.com/);
-- The image used on section meet up was taken from [Unsplash](https://unsplash.com/).
+- The images of the hands were taken from [Shutterstock](https://www.shutterstock.com/) with free trial plan.
