@@ -83,14 +83,6 @@ While playing, the users will also learn how to play the game, which can be used
 - It has been confirmed all game results work as expect and they are always correct.
 - It has been confirmed that header, options, buttons, instructions, results and footer text are all readable and easy to understand by users.
 - Confirmed all colors and fonts chosen are easy to read and accessible by running Lighthouse in dev tools and Wave accessibility tool.
-
-  - Lighthouse Desktop:
-
-    ![Lighthouse desktop](/assets/images/readme-lighthouse-desktop.png)
-
-  - Lighthouse Desktop:
-  
-    ![Lighthouse mobile]()
   
 ### Workflow testing
 
@@ -138,14 +130,21 @@ While playing, the users will also learn how to play the game, which can be used
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjpgenari.github.io%2Feven-and-odds%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 - Javascript
-  - No errors were found when passing through the official [(JS Hint) validator](https://jshint.com/).
+  - No errors were found when passing through the official [JS Hint validator](https://jshint.com/).
   - There is only 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
   There are a total of 40 warnings shown in JSHint, 38 warnings related related to variable 'let' only available on ES6 (esversion: 6); 1 warning related to 'trailing comma in argument lists' only available on ES8 (esversion: 8); and 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
     ![JS Hint](/assets/images/readme-jshint.png)
 - Accessibility
   - No error  were found when passing through the official [WAVE evaluation tool](https://wave.webaim.org/report#/https://jpgenari.github.io/even-and-odds/);
   - Scored 100 for Accessibility when passing through Google Chrome Inspector Lighthouse.
-  ![Lighthouse]()
+
+    - Lighthouse Desktop:
+
+      ![Lighthouse desktop](/assets/images/readme-lighthouse-desktop.png)
+
+    - Lighthouse Desktop:
+
+      ![Lighthouse mobile](/assets/images/readme-lighthouse-mobile.png)
 
 ### Bugs
 
