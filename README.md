@@ -78,8 +78,15 @@ While playing, the users will also learn how to play the game, which can be used
 
 ## Testing
 
-The website has been tested for its functionalities working as expected on multiple browsers and devices (mobile tested using Inspect tool).
+- The game has been tested on different browsers for both desktop and mobile: Chrome, Firefox, Safari and DuckDuckGo.
+- It has been confirmed all game results work as expect and they are always correct.
+- It has been confirmed that header, options, buttons, instructions, results and footer text are all readable and easy to understand by users.
+- Confirmed all colors and fonts chosen are easy to read and accessible by running Lighthouse in dev tools and Wave accessibility tool. 
 
+  - Lighthouse (desktop and mobile)
+
+  ![Lighthouse desktop]()
+  
 ### Workflow testing
 
 - __Functionalities__

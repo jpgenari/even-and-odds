@@ -124,6 +124,7 @@ function runGame() {
     
     enableNumberButtons();
     checkWinner();
+    displayImages();
 }
 
 /**
@@ -141,7 +142,6 @@ function checkWinner() {
 
     gameContainer.classList.remove('start');
 
-    displayImages();
     showResults();
 }
 
