@@ -1,6 +1,6 @@
 # Odds and Evens
 
-Odds and Evens is a game developed with two main objectives: provide a quick gaming session to its users when they are in the middle of a quick break, either from working time or studying session - targeting adults and children. 
+Odds and Evens is a game developed with two main objectives: provide a quick gaming session to its users when they are in the middle of a quick break, either from working time or studying session - targeting adults and children.
 
 The game proves itself as good tool for a quick stress relief allowing users to play against the Cpu. Users opt between odds and evens, then pick up a number between 0 to 5, representing their own hands for their game-play. From there, the Cpu generate a completely random number within the same range. The game result is based on the sum of both numbers, which are always either an odd or even number. Based on number type, if it matches user's opted number, user wins otherwise Cpu wins.
 
@@ -29,7 +29,7 @@ While playing, the users will also learn how to play the game, which can be used
 
   ![Start](assets/images/readme-start.png)
 
-- **Initial image**: featured in the middle, this section contains an image displaying two closed hands 'facing' each other, the typical position users do before playing an odds and evens game. This design aims make users either recognise the game or to start learning how to play it. 
+- **Initial image**: featured in the middle, this section contains an image displaying two closed hands 'facing' each other, the typical position users do before playing an odds and evens game. This design aims make users either recognise the game or to start learning how to play it.
 
   ![Initial Image](assets/images/readme-initial-image.png)
 
@@ -39,23 +39,23 @@ While playing, the users will also learn how to play the game, which can be used
 
 ### - Game Container
 
-  - The game container is hidden when the game starts and it is displayed when users start the game by pressing/clicking *start* on the previous screen. This is where the game takes places and it features odds and evens **option buttons**, **number buttons** from 0 to 6, the **game image**, the **results** section and the **exit** button. 
-	
+- The game container is hidden when the game starts and it is displayed when users start the game by pressing/clicking *start* on the previous screen. This is where the game takes places and it features odds and evens **option buttons**, **number buttons** from 0 to 6, the **game image**, the **results** section and the **exit** button.
+
 ![Game Container](assets/images/readme-game-container.png)
 
- - **Option buttons**: these are the buttons where users opt if they want either odds or evens for their game-play. As the option is required to play, the *number buttons* will be available only after users pick their option. The buttons feature the same animation detailed above for the *start* button, however, the option buttons are also highlighted when clicking, in order to show users which option they picked and the selected button will maintain this status until users pick different option. This allows multiple rounds to be played without the need to click on the option every single time - if users wish to continue playing with the same option. 
-	
+- **Option buttons**: these are the buttons where users opt if they want either odds or evens for their game-play. As the option is required to play, the *number buttons* will be available only after users pick their option. The buttons feature the same animation detailed above for the *start* button, however, the option buttons are also highlighted when clicking, in order to show users which option they picked and the selected button will maintain this status until users pick different option. This allows multiple rounds to be played without the need to click on the option every single time - if users wish to continue playing with the same option.
+
   ![Option Buttons](assets/images/readme-option-buttons.png)
 
- - **Number Buttons**: the are the buttons where users pick the number they want to use with their hand in the game-play, from 0 (closed hand) to 5 (open hand, with 5 fingers) and which will represent half of the final sum. As previously mentioned, these buttons are not available until user picks their option. They also feature the same animation as previous *option button* and when clicked, they are highlighted showing users the number they are using. Also, picking the number triggers the game animation to start as described below in the *game image*, and users can continue playing upon picking a number again.
+- **Number Buttons**: the are the buttons where users pick the number they want to use with their hand in the game-play, from 0 (closed hand) to 5 (open hand, with 5 fingers) and which will represent half of the final sum. As previously mentioned, these buttons are not available until user picks their option. They also feature the same animation as previous *option button* and when clicked, they are highlighted showing users the number they are using. Also, picking the number triggers the game animation to start as described below in the *game image*, and users can continue playing upon picking a number again.
 
   ![Number Buttons](assets/images/readme-number-buttons.png)
 
-- **Game Image**: this section will feature images of two hands, at left representing the users' number and at right representing Cpu's number (generated randomly). Each round, as soon as users pick their number, an animation will start showing both closed hands shaking, simulating the movement made when playing the game in real life. When the animation ends, each hand will show each number (users' and Cpu), with closed hand representing 0, and open fingers representing the number and final results will be displayed. While the animation runs, users won't be able to click on the *number buttons* to avoid game errors. The animation is designed to dynamic to the game and to make users feel the game is running and give them the feeling of the unpredictable outcomes. 
+- **Game Image**: this section will feature images of two hands, at left representing the users' number and at right representing Cpu's number (generated randomly). Each round, as soon as users pick their number, an animation will start showing both closed hands shaking, simulating the movement made when playing the game in real life. When the animation ends, each hand will show each number (users' and Cpu), with closed hand representing 0, and open fingers representing the number and final results will be displayed. While the animation runs, users won't be able to click on the *number buttons* to avoid game errors. The animation is designed to dynamic to the game and to make users feel the game is running and give them the feeling of the unpredictable outcomes.
 
   ![Game Image](assets/images/readme-game-image.png)
 
-- **Results**: in this section users will see the game results each time they play. This section contains two main strings, the first one display a message 'Waiting...' while game animation runs which will be replaced by a message showing the final number (sum of the total seen fingers or numbers), telling users if the number is odd or even and letting them know who wins the round. The second string holds the scores, displaying users' number os wins and number of played rounds - loses are not directly counted, however user can keep score of it through rounds played. The information displayed in this section complements the *how to play* section, showing to the users as they go, how the rules work. 
+- **Results**: in this section users will see the game results each time they play. This section contains two main strings, the first one display a message 'Waiting...' while game animation runs which will be replaced by a message showing the final number (sum of the total seen fingers or numbers), telling users if the number is odd or even and letting them know who wins the round. The second string holds the scores, displaying users' number os wins and number of played rounds - loses are not directly counted, however user can keep score of it through rounds played. The information displayed in this section complements the *how to play* section, showing to the users as they go, how the rules work.
 
   ![Results](assets/images/readme-results.png)
 
@@ -65,8 +65,8 @@ While playing, the users will also learn how to play the game, which can be used
 
 ### - Footer
 
-- Located at the bottom of the page, the footer features a 'hint' that work alongside other elements in the game to show users how to play the game and its rules. 
-- It also includes information about the game developer, displaying a message the game has been developed by code student alongside relevant social network links. The links will open to a new tab to allow easy navigation for users.
+- Located at the bottom of the page, the footer features a 'hint' that work alongside other elements in the game to show users how to play the game and its rules.
+- It also includes information about the game developer, displaying a message the game has been developed by code student alongside relevant social network links leading to developer's GitHub and LinkedIn profiles. The links will open to a new tab to allow easy navigation for users.
 
 ![Footer](assets/images/readme-footer.png)
 
@@ -81,23 +81,35 @@ While playing, the users will also learn how to play the game, which can be used
 - The game has been tested on different browsers for both desktop and mobile: Chrome, Firefox, Safari and DuckDuckGo.
 - It has been confirmed all game results work as expect and they are always correct.
 - It has been confirmed that header, options, buttons, instructions, results and footer text are all readable and easy to understand by users.
-- Confirmed all colors and fonts chosen are easy to read and accessible by running Lighthouse in dev tools and Wave accessibility tool. 
+- Confirmed all colors and fonts chosen are easy to read and accessible by running Lighthouse in dev tools and Wave accessibility tool.
 
   - Lighthouse (desktop and mobile)
 
   ![Lighthouse desktop]()
+  ![Lighthouse mobile]()
+  ![WAVE](/assets/images/readme-wave.png)
   
 ### Workflow testing
 
-- __Functionalities__
+- **Functionalities**
   
-    - Functionality 1
+  - Website loads showing its landing page or start page: it shows its header, instructions container and footer - header and footer do not change when playing the game;
+  - Hovering over start button highlights it indicating action;
+  - Footer displays two social network buttons which, upon clicking they open respective social networking on a new tab;
+  - Clicking on start button leaves (or hides) game instructions and opens game container;
+  - Hovering over ODDS and EVENS buttons highlight them, indicating action and when clicked they stay highlighted indicating selected option, changing only when new option is selected;
+  - At this point, numbers buttons are inactive, hovering and clicking are disabled as the game required first the option to be picked. Once the option is picked, number buttons are active;
+  - Hovering over numbers highlight them, indicating action and when clicked they stay highlighted indicating selected number, changing only when new number is selected. Picking a number triggers game animation;
+  - Animation shows two closed hands shaking, simulating hands movement when playing the game. When done, it shows game results with each played number (user's and Cpu's) through the hands showing fingers 0 to 5 - while the animation runs, number buttons are disabled;
+  - Alongside results, game shows a string of text showing the final number (user's and Cpu's sum up) telling if final number is odd or even and the winner - user or Cpu;
+  - Wins are summed up to the score section alongside number of rounds played (showing how many times the game was played);
+  - Clicking on exit leads user back to landing page exiting the game. The same outcome is available when clicking on the game's name at the top.
 
-- __Layout and Design__
+- **Layout and Design**
 
 [Am I Responsive?](https://ui.dev/amiresponsive?url=https://jpgenari.github.io/even-and-odds/) shows all available common layouts.
 
-- __Tested Browsers and Devices__
+- **Tested Browsers and Devices**
 
     - Desktop:
       - Google Chrome
