@@ -6,20 +6,21 @@ The game proves itself as good tool for a quick stress relief allowing users to 
 
 While playing, the users will also learn how to play the game, which can be used as a decision making tool, especially amongst friends, to determine who get the last cookie, for example. Users can either use the game itself or learn their own hands to play.
 
-![Responsive Mockup](/assets/images/readme-am-i-responsive.png)
+![Responsive Mockup 1](/assets/images/readme-am-i-responsive-1.png)
+![Responsive Mockup 2](/assets/images/readme-am-i-responsive-2.png)
 
 ## Features
 
-### Existing Features
+### **Existing Features**
 
-### - Header
+### **- Header**
 
 - Located at the top of the page, the header features the game name **Odds and Evens** followed by an simple icon representing playing with hands by showing the victory signal. The game name is presented in a easy readable font and using colour with high contrast with footer background colour.
 - Clicking on the game name leads users back to the initial page also exiting the game.
 
 ![Header](assets/images/readme-header.png)
 
-### - Instructions Container
+### **- Instructions Container**
 
 - Featured centralized in the page, this is the initial screen users see. It contains the **start** button, the **initial image** and the **how to play** section. This section is hidden when the game starts, being replaced by the *Game Container* we will see further below.
 
@@ -37,7 +38,7 @@ While playing, the users will also learn how to play the game, which can be used
 
   ![How to Play](assets/images/readme-how-to-play.png)
 
-### - Game Container
+### **- Game Container**
 
 - The game container is hidden when the game starts and it is displayed when users start the game by pressing/clicking *start* on the previous screen. This is where the game takes places and it features odds and evens **option buttons**, **number buttons** from 0 to 6, the **game image**, the **results** section and the **exit** button.
 
@@ -63,20 +64,20 @@ While playing, the users will also learn how to play the game, which can be used
 
   ![Exit](assets/images/readme-exit.png)
 
-### - Footer
+### **- Footer**
 
 - Located at the bottom of the page, the footer features a 'hint' that work alongside other elements in the game to show users how to play the game and its rules.
 - It also includes information about the game developer, displaying a message the game has been developed by code student alongside relevant social network links leading to developer's GitHub and LinkedIn profiles. The links will open to a new tab to allow easy navigation for users.
 
 ![Footer](assets/images/readme-footer.png)
 
-## Features Left to Implement or Future Features
+## **Features Left to Implement or Future Features**
 
-### - Scoreboard
+### **- Scoreboard**
 
 - Implement a scoreboard allowing users to register their scores alongside a name chosen by them to compare their top win/rounds ratio with themselves and friends. To implement this feature, it will be necessary building a database to store the history.
 
-## Testing
+## **Testing**
 
 - The game has been tested on different browsers for both desktop and mobile: Chrome, Firefox, Safari and DuckDuckGo.
 - It has been confirmed all game results work as expect and they are always correct.
@@ -89,7 +90,7 @@ While playing, the users will also learn how to play the game, which can be used
   ![Lighthouse mobile]()
   ![WAVE](/assets/images/readme-wave.png)
   
-### Workflow testing
+### **Workflow testing**
 
 - **Functionalities**
   
