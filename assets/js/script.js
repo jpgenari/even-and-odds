@@ -126,7 +126,6 @@ function runGame() {
     
     enableNumberButtons();
     checkWinner();
-    displayImages();
 }
 
 /**
@@ -144,6 +143,7 @@ function checkWinner() {
 
     gameContainer.classList.remove('start');
 
+    displayImages();
     showResults();
 }
 
@@ -187,13 +187,16 @@ function showResults() {
     incrementPlayed();
 }
 
+/**
+ * Function forces all images to pre-load to browser's cache when the game starts, preventing milliseconds
+ * when showing images the first time.
+ */
 function preloadImages() {
     
-    let preloadImages = images
-    preloadImages.forEach(() => {
+    for (var i = 0; i < images.length; i++){
         let preImage = new Image();
-        preImage = (img) => preImage.src = img;
-    })
+        preImage.src = images[i];
+    }
 }
 
 /**
