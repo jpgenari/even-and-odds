@@ -6,6 +6,8 @@ The game proves itself as good tool for a quick stress relief allowing users to 
 
 While playing, the users will also learn how to play the game, which can be used as a decision making tool, especially amongst friends, to determine who get the last cookie, for example. Users can either use the game itself or learn their own hands to play.
 
+[Odds and Evens](https://jpgenari.github.io/even-and-odds/)
+
 ![Responsive Mockup 1](/assets/images/readme-am-i-responsive-1.png)
 ![Responsive Mockup 2](/assets/images/readme-am-i-responsive-2.png)
 

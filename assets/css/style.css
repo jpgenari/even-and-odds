@@ -266,6 +266,7 @@ footer div {
     }
 
     .user-image img, .cpu-image img {
+        width: 166.3px;
         height: 150px;
     }
 
