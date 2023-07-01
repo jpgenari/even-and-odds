@@ -31,11 +31,11 @@ While playing, the users will also learn how to play the game, which can be used
 
 - **Initial image**: featured in the middle, this section contains an image displaying two closed hands 'facing' each other, the typical position users do before playing an odds and evens game. This design aims make users either recognise the game or to start learning how to play it. 
 
-   ![Initial Image](assets/images/readme-initial-image.png)
+  ![Initial Image](assets/images/readme-initial-image.png)
 
 - **How to play**: section: the third element, contains straight forward instructions about how to start the game and following up actions users should take. These instructions are focused only on the actions users need in order to play, not specific rules, as these will be displayed inside other elements. This design is made to push users to interact with the game,  teaching them along the way.
 
-   ![How to Play](assets/images/readme-how-to-play.png)
+  ![How to Play](assets/images/readme-how-to-play.png)
 
 ### - Game Container
 
@@ -45,36 +45,36 @@ While playing, the users will also learn how to play the game, which can be used
 
  - **Option buttons**: these are the buttons where users opt if they want either odds or evens for their game-play. As the option is required to play, the *number buttons* will be available only after users pick their option. The buttons feature the same animation detailed above for the *start* button, however, the option buttons are also highlighted when clicking, in order to show users which option they picked and the selected button will maintain this status until users pick different option. This allows multiple rounds to be played without the need to click on the option every single time - if users wish to continue playing with the same option. 
 	
-   ![Option Buttons](assets/images/readme-option-buttons.png)
+  ![Option Buttons](assets/images/readme-option-buttons.png)
 
  - **Number Buttons**: the are the buttons where users pick the number they want to use with their hand in the game-play, from 0 (closed hand) to 5 (open hand, with 5 fingers) and which will represent half of the final sum. As previously mentioned, these buttons are not available until user picks their option. They also feature the same animation as previous *option button* and when clicked, they are highlighted showing users the number they are using. Also, picking the number triggers the game animation to start as described below in the *game image*, and users can continue playing upon picking a number again.
 
-   ![Number Buttons](assets/images/readme-number-buttons.png)
+  ![Number Buttons](assets/images/readme-number-buttons.png)
 
- - **Game Image**: this section will feature images of two hands, at left representing the users' number and at right representing Cpu's number (generated randomly). Each round, as soon as users pick their number, an animation will start showing both closed hands shaking, simulating the movement made when playing the game in real life. When the animation ends, each hand will show each number (users' and Cpu), with closed hand representing 0, and open fingers representing the number and final results will be displayed. While the animation runs, users won't be able to click on the *number buttons* to avoid game errors. The animation is designed to dynamic to the game and to make users feel the game is running and give them the feeling of the unpredictable outcomes. 
+- **Game Image**: this section will feature images of two hands, at left representing the users' number and at right representing Cpu's number (generated randomly). Each round, as soon as users pick their number, an animation will start showing both closed hands shaking, simulating the movement made when playing the game in real life. When the animation ends, each hand will show each number (users' and Cpu), with closed hand representing 0, and open fingers representing the number and final results will be displayed. While the animation runs, users won't be able to click on the *number buttons* to avoid game errors. The animation is designed to dynamic to the game and to make users feel the game is running and give them the feeling of the unpredictable outcomes. 
 
-   ![Game Image](assets/images/readme-game-image.png)
+  ![Game Image](assets/images/readme-game-image.png)
 
- - **Results**: in this section users will see the game results each time they play. This section contains two main strings, the first one display a message 'Waiting...' while game animation runs which will be replaced by a message showing the final number (sum of the total seen fingers or numbers), telling users if the number is odd or even and letting them know who wins the round. The second string holds the scores, displaying users' number os wins and number of played rounds - loses are not directly counted, however user can keep score of it through rounds played. The information displayed in this section complements the *how to play* section, showing to the users as they go, how the rules work. 
+- **Results**: in this section users will see the game results each time they play. This section contains two main strings, the first one display a message 'Waiting...' while game animation runs which will be replaced by a message showing the final number (sum of the total seen fingers or numbers), telling users if the number is odd or even and letting them know who wins the round. The second string holds the scores, displaying users' number os wins and number of played rounds - loses are not directly counted, however user can keep score of it through rounds played. The information displayed in this section complements the *how to play* section, showing to the users as they go, how the rules work. 
 
-   ![Results](assets/images/readme-results.png)
+  ![Results](assets/images/readme-results.png)
 
- - **Exit**: this button leads user to the initial screen, exiting the game. It also displays the same animation as previous buttons.
+- **Exit**: this button leads user to the initial screen, exiting the game. It also displays the same animation as previous buttons.
 
-   ![Exit](assets/images/readme-exit.png)
+  ![Exit](assets/images/readme-exit.png)
 
 ### - Footer
 
-  - Located at the bottom of the page, the footer features a 'hint' that work alongside other elements in the game to show users how to play the game and its rules. 
-  - It also includes information about the game developer, displaying a message the game has been developed by code student alongside relevant social network links. The links will open to a new tab to allow easy navigation for users.
+- Located at the bottom of the page, the footer features a 'hint' that work alongside other elements in the game to show users how to play the game and its rules. 
+- It also includes information about the game developer, displaying a message the game has been developed by code student alongside relevant social network links. The links will open to a new tab to allow easy navigation for users.
 
 ![Footer](assets/images/readme-footer.png)
 
-### Features Left to Implement or Future Features
+## Features Left to Implement or Future Features
 
-- __Feature 1__
+### - Scoreboard
 
-  - Feature 1.1.
+- Implement a scoreboard allowing users to register their scores alongside a name chosen by them to compare their top win/rounds ratio with themselves and friends. To implement this feature, it will be necessary building a database to store the history.
 
 ## Testing
 
