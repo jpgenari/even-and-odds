@@ -255,6 +255,12 @@ footer div {
 /* for small to extra-small screens size from 510px wide and down */
 
 @media screen and (max-width: 510px) {
+    #main-container {
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+    }
+    
     #main-image, #result-images {
         height: 170px;
     }
