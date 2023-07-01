@@ -112,24 +112,25 @@ While playing, the users will also learn how to play the game, which can be used
 
 - **Tested Browsers and Devices**
 
-    - Desktop:
-      - Google Chrome
-      - Mozilla Firefox
-      - Apple Safari
-    - Tablet *tested through Google Chrome Inspector*:
-      - *iPad Air*
-      - *iPad Mini*
-      - *Surface Pro 7*
-      - *Google Nest Hub* 
-    - Mobile *tested through Google Chrome Inspector*:
-      - iPhone 13 Pro (Google Chrome, Mozilla Firefox and Apple Safari)
+  - Desktop:
+    - Google Chrome
+    - Mozilla Firefox
+    - Apple Safari
+    - DuckDuckGo
+  - Tablet *tested through Google Chrome Inspector*:
+    - *iPad Air*
+    - *iPad Mini*
+    - *Surface Pro 7*
+    - *Google Nest Hub*
+  - Mobile *tested through Google Chrome Inspector*:
+      - iPhone 13 Pro (Google Chrome, Mozilla Firefox, Apple Safari and DuckDuckGo)
       - *iPhone SE*
       - *iPhone XR*
       - *Pixel 5*
       - *Samsung Galaxy S8+*
       - *Samsung Galaxy S20 Ultra*
 
-### Validator Testing
+### **Validator Testing**
 
 - HTML
   - No errors were returned when passing through the official [W3C validator]().
