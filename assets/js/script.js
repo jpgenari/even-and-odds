@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 8 */
+
 let instructionsContainer = document.getElementById('instructions-container');
 let gameContainer = document.getElementById('game-container');
 let userOption;
