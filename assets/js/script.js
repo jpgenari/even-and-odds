@@ -190,9 +190,9 @@ function showResults() {
 function preloadImages() {
     
     let preloadImages = images
-    preloadImages.forEach(function() {
-        let preImage = new Image()
-        preImage = (img) => preImage.src = img
+    preloadImages.forEach(() => {
+        let preImage = new Image();
+        preImage = (img) => preImage.src = img;
     })
 }
 
