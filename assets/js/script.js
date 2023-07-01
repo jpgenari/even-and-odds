@@ -42,6 +42,8 @@ function startGame() {
     
     instructionsContainer.classList.add('hide');
     gameContainer.classList.remove('hide');
+
+    preloadImages();
 }
 
 /** 
@@ -185,6 +187,14 @@ function showResults() {
     incrementPlayed();
 }
 
+function preloadImages() {
+    
+    let preloadImages = images
+    preloadImages.forEach(function() {
+        let preImage = new Image()
+        preImage = (img) => preImage.src = img
+    })
+}
 
 /**
  * This function enables the number selection buttons, forcing user first pick-up a game option
