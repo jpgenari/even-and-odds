@@ -84,11 +84,13 @@ While playing, the users will also learn how to play the game, which can be used
 - It has been confirmed that header, options, buttons, instructions, results and footer text are all readable and easy to understand by users.
 - Confirmed all colors and fonts chosen are easy to read and accessible by running Lighthouse in dev tools and Wave accessibility tool.
 
-  - Lighthouse (desktop and mobile)
+  - Lighthouse Desktop:
 
-    ![Lighthouse desktop]()
+    ![Lighthouse desktop](/assets/images/readme-lighthouse-desktop.png)
+
+  - Lighthouse Desktop:
+  
     ![Lighthouse mobile]()
-    ![WAVE](/assets/images/readme-wave.png)
   
 ### Workflow testing
 
@@ -137,7 +139,8 @@ While playing, the users will also learn how to play the game, which can be used
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjpgenari.github.io%2Feven-and-odds%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 - Javascript
   - No errors were found when passing through the official [(JS Hint) validator](https://jshint.com/).
-  - There are a total of 40 warnings shown in JSHint, 38 warnings related related to variable 'let' only available on ES6 (esversion: 6); 1 warning related to 'trailing comma in argument lists' only available on ES8 (esversion: 8); and 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
+  - There is only 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
+  There are a total of 40 warnings shown in JSHint, 38 warnings related related to variable 'let' only available on ES6 (esversion: 6); 1 warning related to 'trailing comma in argument lists' only available on ES8 (esversion: 8); and 1 warning related to 'function declared within a loop referencing outer scoped variable leading to confusing semantics' which is not an issue considering the small project size.
     ![JS Hint](/assets/images/readme-jshint.png)
 - Accessibility
   - No error  were found when passing through the official [WAVE evaluation tool](https://wave.webaim.org/report#/https://jpgenari.github.io/even-and-odds/);
@@ -198,9 +201,22 @@ While playing, the users will also learn how to play the game, which can be used
 
       ```
 
+  - **Images showing milliseconds delay after animation**
+  
+    - After game was deploying, when testing it it was noticed a bug after the animation, with images showing milliseconds delay when displayed for the first time. Based on the condition for the bug to take place, the assumption was that it was being caused by image cache on the browser - even though using very small images, considering time window for the code to run and call the images the bug was taking place. The assumption was confirmed when debugging using inspect tools > network where it was possible to view images being loaded one by one and the time taken.
+    - In order to sort out the bug, it was tried to move the function displayImages() to previous function trying to load images before the animation ended which did not work as expected. Then, throughout online research it was find a solution using 'new Image()' to create the function preloadImages() to inject images to the browser's cache when user clicks on start button at the very beginning.
+    - This solution fixed the bug without causing any performance lost as the images are loaded only after the code has been fully loaded and transitioning screen after user clicking on the button.
+      - Inspect > Network (before the fix, after running first round):
+
+      ![Network before fix](/assets/images/readme-network1.png)
+
+      - Inspect > Network (after the fix, clicking start button):
+
+      ![Network before fix](/assets/images/readme-network2.png)
+
 ### Unfixed Bugs
 
-- There is minor bug that sometimes happens, causing images with final results to be milliseconds delayed after animation finishes. It only happens when the images are displayed for the first time which indicates this is related to image loading time - after first load and saved in cache, the bug no longer is seen. But also does not take place when running locally, not deployed.
+- There are no unfixed bugs.
 
 ## Deployment
 
@@ -224,10 +240,12 @@ While playing, the users will also learn how to play the game, which can be used
 - Solution to insert images with Javascript was taken from [Quora question](https://www.quora.com/How-do-you-insert-an-image-in-Javascript);
 - Solution for setTimeout() was taken from [w3Schools](https://www.w3schools.com/jsref/met_win_settimeout.asp);
 - Solution for activeOptionButton() and activeNumberButton() functions was taken from [SoftAuthor](https://softauthor.com/make-selected-clicked-button-active-in-javascript/);
-- Solution for enableNumberButtons() and disableNumberButton() functions taken from [Stack Overflow question](https://stackoverflow.com/questions/53242127/disabling-multiple-buttons-with-the-same-class-attribute-but-different-ids), [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) and [bobbyhadz blog](https://bobbyhadz.com/blog/javascript-remove-class-from-multiple-elements);
+- Solution for enableNumberButtons() and disableNumberButton() functions taken from [Stack Overflow 'Disabling multiple buttons with the same class attribute but different ids'](https://stackoverflow.com/questions/53242127/disabling-multiple-buttons-with-the-same-class-attribute-but-different-ids), [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) and [bobbyhadz blog](https://bobbyhadz.com/blog/javascript-remove-class-from-multiple-elements);
 - Information about Arrow Functions was taken from [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions);
 - Information about how to convert Arrow Function to regular function was taken from [StackExchange](https://superuser.com/questions/1721957/how-to-convert-arrow-function-to-regular-function);
 - Styling solutions for shadow box, header and footer positioning and handling images with CSS were taken from [Web Dev Simplified video](https://youtu.be/riDzcEQbX6k), [CSS-TRICKS - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY) and [30 seconds of code](https://www.30secondsofcode.org/css/s/footer-at-the-bottom/#:~:text=This%20is%20done%20by%20setting,and%20flex%2Ddirection%3A%20column%20.);
+- Solution for preloadImages() was taken from [KIRUPA](https://www.kirupa.com/html5/preloading_images.htm#:~:text=The%20Code%20for%20Preloading%20an%20Image&text=All%20you%20need%20to%20do,jpg%22%20), [Stack Overflow 'How do you cache an image in Javascript'](https://stackoverflow.com/questions/10240110/how-do-you-cache-an-image-in-javascript), [Stack Overflow 'What does the JSLint error 'body of a for in should be wrapped in an if statement' mean?'](https://stackoverflow.com/questions/1963102/what-does-the-jslint-error-body-of-a-for-in-should-be-wrapped-in-an-if-statemen), [Medium post](https://jackskylord.medium.com/how-to-preload-images-into-cache-in-react-js-ff1642708240) and [Video: This is why you need caching](https://youtu.be/n7mV2GAEx8M).
+- Solution to prevent unnecessary warnings in JSHint was taken from [Stack Overflow 'Why does JSHint throw a warning if I am using const?'](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const);
 - Some debugging performed with support of [ChatGPT](https://chat.openai.com/).
 
 ### Media
