@@ -69,7 +69,6 @@ function getUserOption(userButton) {
  * This function get the user input for the game from 1 to 5 and run the game
  * It triggers animationResults function
  */
-
 function getUserNumber(userNumber) {
 
     if (userNumber === 'btn-0') {
@@ -187,6 +186,7 @@ function showResults() {
     } else {
         document.getElementById('show-results').innerHTML = `${totalSum} is ${oddsOrEvens}, CPU WON! Try again!`;
     }
+
     incrementPlayed();
 }
 
@@ -230,7 +230,6 @@ function disableNumberButton() {
 function activeOptionButton() {
     
     let prevOptionButton = null;
-    
     let selectedOptionButton = document.getElementById('option-buttons');
     
     selectedOptionButton.addEventListener('click', function (e) {
@@ -243,15 +242,15 @@ function activeOptionButton() {
             prevOptionButton.classList.remove('active');
         }
         prevOptionButton = e.target;
-});
+    });
 }
 
 /**
  * Function to show selected Number button after user click
  */
 function activeNumberButton() {
+    
     let prevNumberButton = null;
-
     let selectedNumberButton = document.getElementById('numbers-buttons');
     
     selectedNumberButton.addEventListener('click', function (e) {  
@@ -264,7 +263,7 @@ function activeNumberButton() {
             prevNumberButton.classList.remove('active');
         }
         prevNumberButton = e.target;
-});
+    });
 }
 
 /**
